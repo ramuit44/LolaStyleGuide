@@ -1,0 +1,3722 @@
+
+<!DOCTYPE html>
+<html lang="en" manifest="offline.cache">
+	<head>
+		<title>LOLA Style Guide - Westpac</title>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/tableSorter.min.js"></script>
+		<script src="js/mac.js"></script>
+		<link href="css/normalize.css" rel="stylesheet" />
+		<link href="css/bootstrap.css" rel="stylesheet" />
+		<link href='css/font-awesome.css' rel='stylesheet' />
+		<link href="css/macStyles.css" rel="stylesheet" />
+
+		<style>
+		/* --- STYLE GUIDE ONLY STYLES --- */
+		/* 	The following styles only have relevance in the style guide.
+			Please keep these styles contained within this style guide,
+			and do not move into the main macStyles.css file. */
+
+			.fontawesome-icon-list .col-sm-4 {
+				padding-top:1em;
+			}
+
+			.container .col-sm-8 {
+				width:970px;
+				margin:0 auto;
+			}
+
+			.panel-secondary .col-sm-8 {
+				width:66.66666667%;
+			}
+
+			.mac_heading {
+				font-family: "Roboto", Helvetica, Arial, sans-serif;
+				border-bottom:2px solid #ccc;
+				margin-top:0;
+				margin-bottom:1em;
+				color:#621A4B;
+			}
+
+			#panels .cl .panel-heading, .cl .panel-heading, .navbar-header {
+				background-color:#f5f5f5;
+				color:#621A4B;
+				font-weight: inherit;
+				font-size: 24px;
+			}
+
+			#panels .panel-light>.panel-heading {
+				background-color: rgba(98,26,75,0.3);
+				color:#000;
+			}
+
+			.stg #panels .panel-light>.panel-heading {
+				background-color: rgba(120,190,32,0.3);
+			}
+
+			.bom #panels .panel-light>.panel-heading {
+				background-color: rgba(104,90,192,0.3);
+				color:#000;
+			}
+
+			.bom #panels .panel-heading, .bom .cl .panel-heading, .bom .navbar-header {
+				background-color:#000;
+				color:#fff;
+				font-weight: inherit;
+				font-size: 24px;
+			}
+
+			.stg #panels .cl .panel-heading, .stg .cl .panel-heading, .stg .navbar-header {
+				background-color: rgba(120,190,32,0.2);
+				color:#004833;
+				font-weight: inherit;
+				font-size: 24px;
+			}
+
+			.bom #panels .cl .panel-heading, .bom .cl .panel-heading {
+				background-color: rgba(104,90,192,0.2);
+				color:rgb(104,90,192);
+				font-weight: inherit;
+				font-size: 24px;
+			}
+
+			.wrap {
+				width:100%;
+				margin:1em auto;
+			}
+
+			li:hover {
+				background-color: rgba(98,26,75, 0.2);
+				transition: background-color 0.25s ease-out;
+			}
+
+			li {
+				transition: background-color 0.25s ease-out;
+			}
+
+			ul a {
+				color: #621A4B;
+			}
+
+			ul a:hover {
+				color: #621A4B;
+				text-decoration:underline;
+			}
+
+			.dropdown ul li, .dropdown ul li:hover {
+				background-color: #fff;
+				transition:none;
+			}
+
+
+			.list-group .glyphicon{
+				float:right;
+				color:#621A4B;	
+			}
+
+			.palette {
+				height:4.2em;
+				width:6.5em;
+				display:block;
+			}
+
+			.palette-box {
+				border: 1px solid #ccc;
+				padding:1em;
+				height:9em;
+				width:9em;
+				float:left;
+				margin: 1em;
+			}
+
+			.h h2, h3 {
+				border:0;
+			}
+
+			#panels .panel-heading {
+				background-color: #621A4B;
+				color:#fff;
+				font-size:140%;
+			}
+
+			.stg #panels .panel-heading {
+				background-color:#004833;
+			}
+			
+			#header .pageHeader {
+				padding-left:0;
+			}
+
+			#header .pageHeader h2 {
+				margin-left:-17px;
+			}
+			.navbar-inner {
+				height:5.1em;
+			}
+
+			.navbar-inner .col-sm-4 {
+				margin-top:1em;
+			}
+
+			.stg .navbar-inner .col-sm-4, .bom .navbar-inner .col-sm-4 {
+				margin-top:0;
+				width:450px;
+			}
+
+			.navbar-header h4 {
+				margin-top:0.1em;
+			}
+
+			.navbar-header h4 {
+				color:#621A4B;
+			}
+
+			.stg .navbar-header h4 {
+				color:#004833;
+			}
+
+			.bom .navbar-header h4 {
+				color:#fff;
+			}
+
+			.navbar-toggle {
+				background-color:#fff;
+			}
+
+			ul>div>a>li {
+				padding-left:4em!important;
+				text-indent: 0!important;
+			}
+
+			code {
+				tab-size:4;
+				white-space: pre-wrap;
+			}
+
+		</style>
+
+		<script>
+		window.onload = function () {
+			$('#st').hide();
+			$('#bm').hide();
+			$('#coloursStg').hide();
+			$('#coloursBom').hide();
+		}
+
+		function bank(bN) {
+			if (bN == 'wpc') {
+				$('body').removeClass("stg");
+				$('body').removeClass("bom");
+				$('#st').hide();
+				$('#bm').hide();
+				$('#wp').show();
+				$('#coloursStg').hide();
+				$('#coloursWpc').show();
+				$('#coloursBom').hide();		
+				$('#mainNav').removeClass("cl");
+			}
+			if (bN == 'stg') {
+				$('body').removeClass("bom");
+				$('body').addClass("stg");
+				$('#st').show();
+				$('#bm').hide();
+				$('#wp').hide();
+				$('#coloursStg').show();
+				$('#coloursWpc').hide();
+				$('#coloursBom').hide();		
+				$('#mainNav').addClass("cl");
+			}
+			if (bN == 'bom') {
+				$('body').removeClass("stg");
+				$('body').addClass("bom");
+				$('#st').hide();
+				$('#bm').show();
+				$('#wp').hide();
+				$('#coloursStg').hide();
+				$('#coloursWpc').hide();
+				$('#coloursBom').show();		
+				$('#mainNav').addClass("cl");
+			}
+		}
+	</script>
+
+	<script>
+         $(function() {
+            $('#btn1').on('click', function() {
+            	$('#btn1').addClass('active');
+            	$('#btn2').removeClass('active');
+            	$('#btn3').removeClass('active');
+            });
+            $('#btn2').on('click', function() {
+            	$('#btn2').addClass('active');
+            	$('#btn1').removeClass('active');
+            	$('#btn3').removeClass('active');
+            });
+            $('#btn3').on('click', function() {
+            	$('#btn3').addClass('active');
+            	$('#btn2').removeClass('active');
+            	$('#btn1').removeClass('active');
+            });
+         });
+      </script>
+
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script type="text/javascript">
+	  google.load("visualization", "1", {packages:["corechart"]});
+	  google.setOnLoadCallback(drawChart);
+	  function drawChart() {
+
+	    var data = google.visualization.arrayToDataTable([
+	    	['Type', 'Amount'],
+	      ['$800K - Home Lending', 800],
+	      ['$170K - Business Lending', 170],
+	      ['$65K - Equipment Finance', 65]
+	    ]);
+
+	    var options = {
+	    	slices: {
+            0: { color: 'DimGray' },
+            1: { color: 'Gray' },
+            2: { color: 'LightSlateGray'},
+            3: { color: 'Silver'},
+            4: { color: 'SlateGray'}
+          },
+          pieStartAngle: 120,
+          pieSliceText: 'none'
+	    };
+
+	    var chart = new google.visualization.PieChart(document.getElementById('limit-fin-chart'));
+
+	    chart.draw(data, options);
+	  }
+	</script>
+	</head>
+	<body>
+	<div class="row-fluid" id="top">
+		<div class="navbar-inverse">
+			<div class="navbar-inner">
+			<button id="toggleBank" class="btn btn-mac pull-right" onclick="bank('bom');" style="margin-top:1.3em;margin-right:1em;">Bank of Melb</button>
+			<button id="toggleBank" class="btn btn-mac pull-right" onclick="bank('stg');" style="margin-top:1.3em;margin-right:1em;">St George</button>
+			<button id="toggleBank" class="btn btn-mac pull-right" onclick="bank('wpc');" style="margin-top:1.3em;margin-right:1em;">Westpac</button>
+				<div class='container'>
+					<div class="col-sm-4">
+						<h4 class="logo"><span id="wp">LOLA Style Guide - Westpac</span>
+						<span id="st">LOLA Style Guide - St George</span>
+						<span id="bm">LOLA Style Guide - Bank of Melbourne</span>
+						</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div style="clear:both;"></div>
+		<div class='container'>
+			<nav class="navbar navbar-default" role="navigation" style="margin-top:5px;">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+						<span class="sr-only">Toggle Navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="#" class="navbar-brand" data-toggle="collapse" data-target="#navbar-collapse"><h4>Web components</h4></a>
+				</div>
+				<div class="collapse nav-bar-collapse" id="navbar-collapse">
+					<ul class="nav navbar-nav">
+						<a href="#introSubmenu" data-toggle="collapse" data-parent="#introSubmenu"><li class="list-group-item">Introduction to Bootstrap<span class="glyphicon glyphicon-chevron-down pull-right"></span></li></a>
+							<div class="collapse list-group-submenu" id="introSubmenu">
+								<a href="#boot"><li class="list-group-item">Bootstrap<span class="glyphicon glyphicon-chevron-right pull-right"></span></li></a>
+								<a href="#bootcomp"><li class="list-group-item">Bootstrap components<span class="glyphicon glyphicon-chevron-right pull-right"></span></li></a>
+								<a href="#layout"><li class="list-group-item">Layout<span class="glyphicon glyphicon-chevron-right pull-right"></span></li></a>
+							</div>
+						<a href="#navSubmenu" data-toggle="collapse" data-parent="#navSubmenu"><li class="list-group-item">Navigation<span class="glyphicon glyphicon-chevron-down pull-right"></span></li></a>
+							<div class="collapse list-group-submenu" id="navSubmenu">
+								<a href="#header"><li class="list-group-item">Header<span class="glyphicon glyphicon-chevron-right pull-right"></span></li></a>
+								<a href="#butNav"><li class="list-group-item">Button navigation and groups<span class="glyphicon glyphicon-chevron-right pull-right"></span></li></a>
+								<a href="#page"><li class="list-group-item">Pagination<span class="glyphicon glyphicon-chevron-right pull-right"></span></li></a>
+							</div>
+						<a href="#fontsSubmenu" data-toggle="collapse" data-parent="#fontSubmenu"><li class="list-group-item">Fonts and Typography<span class="glyphicon glyphicon-chevron-down pull-right"></span></li></a>
+							<div class="collapse list-group-submenu" id="fontsSubmenu">
+								<a href="#fonts"><li class="list-group-item">Fonts and text<span class="glyphicon glyphicon-chevron-right pull-right"></span></li></a>
+								<a href="#colours"><li class="list-group-item">Colours<span class="glyphicon glyphicon-chevron-right pull-right"></span></li></a>
+								<a href="#headings"><li class="list-group-item">Headings<span class="glyphicon glyphicon-chevron-right pull-right"></span></li></a>
+								<a href="#icons"><li class="list-group-item">Icons<span class="glyphicon glyphicon-chevron-right pull-right"></span></li></a>
+							</div>
+						<a href="#tables"><li class="list-group-item">Tables<span class="glyphicon glyphicon-chevron-right pull-right"></span></li></a>
+						<a href="#formsSubmenu" data-toggle="collapse" data-parent="#formsSubmenu"><li class="list-group-item">Forms and form elements<span class="glyphicon glyphicon-chevron-down pull-right"></span></li></a>
+							<div class="collapse list-group-submenu" id="formsSubmenu">
+								<a href="#inputs"><li class="list-group-item sub-sub-item" data-parent="#formsSubmenu" style="border-top:1px solid #ccc;">Inputs<span class="glyphicon glyphicon-chevron-right pull-right"></span></li></a>
+								<a href="#buttons"><li class="list-group-item sub-sub-item" data-parent="#formsSubmenu">Buttons<span class="glyphicon glyphicon-chevron-right pull-right"></span></li></a>
+								<a href="#radio"><li class="list-group-item sub-sub-item" data-parent="#formsSubmenu">Radio/Check buttons<span class="glyphicon glyphicon-chevron-right pull-right"></span></li></a>
+								<a href="#drop"><li class="list-group-item sub-sub-item" data-parent="#formsSubmenu">Dropdown lists<span class="glyphicon glyphicon-chevron-right pull-right"></span></li></a>
+								<a href="#valid"><li class="list-group-item sub-sub-item" data-parent="#formsSubmenu">Validation messages<span class="glyphicon glyphicon-chevron-right pull-right"></span></li></a>
+							</div>
+						<a href="#panelSubmenu" data-toggle="collapse" data-parent="#panelsSubmenu"><li class="list-group-item">Panels<span class="glyphicon glyphicon-chevron-down pull-right"></span></li></a>
+							<div class="collapse list-group-submenu" id="panelSubmenu">
+								<a href="#defP"><li class="list-group-item sub-sub-item" data-parent="#panelSubmenu" style="border-top:1px solid #ccc;">Default Panel<span class="glyphicon glyphicon-chevron-right pull-right"></span></li></a>
+								<a href="#defPanelBtn"><li class="list-group-item sub-sub-item" data-parent="#panelSubmenu" style="border-top:1px solid #ccc;">Default Panel with button<span class="glyphicon glyphicon-chevron-right pull-right"></span></li></a>
+								<a href="#defPaneltbl"><li class="list-group-item sub-sub-item" data-parent="#panelSubmenu" style="border-top:1px solid #ccc;">Default Panel with table<span class="glyphicon glyphicon-chevron-right pull-right"></span></li></a>
+								<a href="#defPanelSec"><li class="list-group-item sub-sub-item" data-parent="#panelSubmenu" style="border-top:1px solid #ccc;">Default Panel with internal secondary panel<span class="glyphicon glyphicon-chevron-right pull-right"></span></li></a>
+								<a href="#noFin"><li class="list-group-item sub-sub-item" data-parent="#panelSubmenu" style="border-top:1px solid #ccc;">No Financials panel<span class="glyphicon glyphicon-chevron-right pull-right"></span></li></a>
+								<a href="#approve"><li class="list-group-item sub-sub-item" data-parent="#panelSubmenu" style="border-top:1px solid #ccc;">Approved panel<span class="glyphicon glyphicon-chevron-right pull-right"></span></li></a>
+								<a href="#incomp"><li class="list-group-item sub-sub-item" data-parent="#panelSubmenu" style="border-top:1px solid #ccc;">Incomplete panel<span class="glyphicon glyphicon-chevron-right pull-right"></span></li></a>
+								<a href="#custG"><li class="list-group-item sub-sub-item" data-parent="#panelSubmenu" style="border-top:1px solid #ccc;">Customer group panel<span class="glyphicon glyphicon-chevron-right pull-right"></span></li></a>
+								<a href="#limits"><li class="list-group-item sub-sub-item" data-parent="#panelSubmenu" style="border-top:1px solid #ccc;">Limits panel<span class="glyphicon glyphicon-chevron-right pull-right"></span></li></a>
+							</div>
+						<a href="#msg"><li class="list-group-item">Global warnings and messages<span class="glyphicon glyphicon-chevron-right pull-right"></span></li></a>
+						<a href="#modal"><li class="list-group-item">Modal windows<span class="glyphicon glyphicon-chevron-right pull-right"></span></li></a>
+						<a href="#charts"><li class="list-group-item">Charts<span class="glyphicon glyphicon-chevron-right pull-right"></span></li></a>
+						<a href="#other"><li class="list-group-item">Other components<span class="glyphicon glyphicon-chevron-right pull-right"></span></li></a>
+					</ul>
+				</div>
+			</nav>
+			</div>
+		<div class="container">
+			<div class="row-fluid">
+			<div id="intro">
+				<h2 class='mac_heading'>Introduction</h2>
+				<p>Welcome to LOLA Style Guide. <br><b>Contributors</b> : Sriram, Srini and Menaha.</p>
+				<div class="top"><a href="#top">^Top</a></div><div class="clear"></div>
+			</div>
+			<div id="boot">
+				<h3 class='mac_heading'>Bootstrap</h3>
+					<p>LOLA is built on the Twitter Bootstrap framework v3.0</p>
+					<p>Default Bootstrap theme is used as much as possible, with some custom css classes contained within a 'macStyles.css' file.</p>
+					<p>For icons "Font Awesome Icons" were used.</p>
+					<p>The custom CSS file should be included below the default Bootstrap CSS files. Normalize.css is used to reset all css rules before loading the Bootstrap CSS files</p>
+					<p>Bootstrap.min.js is the supporing file for the bootstrap.css for all toggle and script related actions.</p>
+					<p>Google's JS API is used to draw charts.</p>
+					<p>mac.js is used for custom, LOLA-specific java script code</p>
+					<p>tableSorter.js is used to sort tables, etc.</p>
+					<div class="panel panel-default cl">
+						<div class="panel-heading">HTML</div>
+						<div class="panel-body"> 
+						<pre><code>&lt;script src="js/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;script src="js/tableSorter.min.js"&gt;&lt;/script&gt;
+&lt;script src="js/mac.js"&gt;&lt;/script&gt;
+&lt;script src="https://www.google.com/jsapi"&gt;&lt;/script&gt;
+&lt;link href="css/normalize.css" rel="stylesheet" /&gt;
+&lt;link href="css/bootstrap.min.css" rel="stylesheet" /&gt;
+&lt;link href='css/font-awesome.css' rel='stylesheet' /&gt;
+&lt;link href="css/macStyles.css" rel="stylesheet" /&gt;
+						</code></pre>
+						</div>
+					</div>
+				<div class="top"><a href="#top">^Top</a></div><div class="clear"></div>
+			</div>
+			<div id="bootcomp">
+				<h3 class='mac_heading'>Bootstrap Components</h3>
+				<p>Where available, default bootstrap components have been used to minimise load. A customised stylesheet has been made to format colours, spacing, size and other requirements. 
+				<div class="top"><a href="#top">^Top</a></div><div class="clear"></div>
+			</div>
+			<div id="layout">
+				<h3 class='mac_heading'>Layout Structure</h3>
+				<h4>Default Page Structure</h4>
+				<div class='row-fluid div_border' >
+					<div class='row-fluid div_border'> 
+						<div class='container-fluid'>Header</div>
+					</div>
+					<div class='row-fluid div_border'> 
+						<div class='container-fluid'>Menus or Navigation</div>
+					</div>
+					<div class='row-fluid div_border'> 
+						<div class='container-fluid div_border'>
+							<div class="col-sm-12 div_border">
+								Body 
+							</div>		
+						</div>
+					</div>
+					<div class='row-fluid'> 
+						<div class='container-fluid'>Footer</div>
+					</div>
+				</div>
+				<br>
+				<div class="panel panel-default cl">
+					<div class="panel-heading">HTML</div>
+					<div class="panel-body">
+						<pre><code>
+&lt;div class='row-fluid' &gt; 
+	&lt;div class='row-fluid'&gt; 
+		&lt;div class='container-fluid'&gt;Header&lt;/div&gt; 
+	&lt;/div&gt; 
+	&lt;div class='row-fluid'&gt; 
+		&lt;div class='container-fluid'&gt;Menus or Navigation&lt;/div&gt; 
+	&lt;/div&gt; 
+	&lt;div class='row-fluid'&gt; 
+		&lt;div class='container-fluid'&gt; 
+			&lt;div class=&quot;col-sm-12&quot;&gt; Body &lt;/div&gt; 
+		&lt;/div&gt; 
+	&lt;/div&gt; 
+	&lt;div class='row-fluid'&gt; 
+		&lt;div class='container-fluid'&gt;Footer&lt;/div&gt; 
+	&lt;/div&gt; 
+&lt;/div&gt;
+						</code></pre>
+					</div>
+				</div>
+				
+				<h4>Body With 2 Coloumns</h4>
+				<div class='row-fluid div_border' >
+					<div class='row-fluid div_border'> 
+						<div class='container-fluid'>Header</div>
+					</div>
+					<div class='row-fluid div_border'> 
+						<div class='container-fluid'>Menus or Navigation</div>
+					</div>
+					<div class='row-fluid div_border'> 
+						<div class='container-fluid div_border'>
+							<div class="col-sm-3 div_border">
+								Body column1
+							</div>
+							<div class="col-sm-9 div_border">
+								Body column2
+							</div>		
+						</div>
+					</div>
+					<div class='row-fluid'> 
+						<div class='container-fluid'>Footer</div>
+					</div>
+				</div>
+				<br>
+				<div class="panel panel-default cl">
+					<div class="panel-heading">HTML</div>
+					<div class="panel-body">
+						<pre><code>
+&lt;div class='row-fluid' &gt; 
+	&lt;div class='row-fluid'&gt; 
+		&lt;div class='container-fluid'&gt;Header&lt;/div&gt; 
+	&lt;/div&gt; 
+	&lt;div class='row-fluid'&gt; 
+		&lt;div class='container-fluid'&gt;Menus or Navigation&lt;/div&gt; 
+	&lt;/div&gt; 
+	&lt;div class='row-fluid'&gt; 
+		&lt;div class='container-fluid'&gt; 
+			&lt;div class=&quot;col-sm-3&quot;&gt; Body column1 &lt;/div&gt; 
+			&lt;div class=&quot;col-sm-9&quot;&gt; Body column2 &lt;/div&gt; 
+		&lt;/div&gt; 
+	&lt;/div&gt; 
+	&lt;div class='row-fluid'&gt; 
+		&lt;div class='container-fluid'&gt;Footer&lt;/div&gt; 
+	&lt;/div&gt; 
+&lt;/div&gt;
+						</code></pre>
+					</div>
+				</div>
+				<h4>Body With 3 Coloumns</h4>
+				<div class='row-fluid div_border' >
+					<div class='row-fluid div_border'> 
+						<div class='container-fluid'>Header</div>
+					</div>
+					<div class='row-fluid div_border'> 
+						<div class='container-fluid'>Menus or Navigation</div>
+					</div>
+					<div class='row-fluid div_border'> 
+						<div class='container-fluid div_border'>
+							<div class="col-sm-4 div_border">
+								Body column1
+							</div>
+							<div class="col-sm-4 div_border">
+								Body column2
+							</div>
+							<div class="col-sm-4 div_border">
+								Body column3
+							</div>	
+						</div>
+					</div>
+					<div class='row-fluid'> 
+						<div class='container-fluid'>Footer</div>
+					</div>
+				</div>
+				<br>
+				<div class="panel panel-default cl">
+					<div class="panel-heading">HTML</div>
+					<div class="panel-body">
+						<pre><code>
+&lt;div class='row-fluid' &gt; 
+	&lt;div class='row-fluid'&gt; 
+		&lt;div class='container-fluid'&gt;Header&lt;/div&gt; 
+	&lt;/div&gt; 
+	&lt;div class='row-fluid'&gt; 
+		&lt;div class='container-fluid'&gt;Menus or Navigation&lt;/div&gt; 
+	&lt;/div&gt;
+	&lt;div class='row-fluid'&gt; 
+		&lt;div class='container-fluid'&gt; 
+			&lt;div class=&quot;col-sm-4&quot;&gt; Body column1 &lt;/div&gt; 
+			&lt;div class=&quot;col-sm-4&quot;&gt; Body column2 &lt;/div&gt; 
+			&lt;div class=&quot;col-sm-4&quot;&gt; Body column3 &lt;/div&gt; 
+		&lt;/div&gt; 
+	&lt;/div&gt; 
+	&lt;div class='row-fluid'&gt; 
+		&lt;div class='container-fluid'&gt;Footer&lt;/div&gt; 
+	&lt;/div&gt; 
+&lt;/div&gt;
+						</code></pre>
+					</div>
+				</div>
+				
+				<div class="top"><a href="#top">^Top</a></div><div class="clear"></div>
+			</div>
+			<div id="header">
+				<h2 class='mac_heading'>Navigation</h2>
+				<h3 class="mac_heading">Header bar</h3>
+				Below demonstrates the top level header and status bar. The 'In progress' icon cna be hidden once a decision has been reached via simple jQuery.
+				<div class="navbar-inverse">
+					<div class="navbar-inner">
+						<div class="container">
+							<div class="row-fluid">
+								<div class="col-sm-7">
+									<h4 class="logo">Business Lending Drive</h4>
+								</div>
+								<div class="col-sm-3 pull-right">
+									<i class="fa fa-home"></i>
+									<i class="fa fa-search"></i>
+									<div class="dropdown pull-right" style="display:inline-block;">
+									  <button class="btn btn-default dropdown-toggle navbar" type="button" id="dropdownMenu1" data-toggle="dropdown">
+									    Dropdown
+									    <span class="caret"></span>
+									  </button>
+									  <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+									    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+									    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+									    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+									    <li role="presentation" class="divider"></li>
+									    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+									  </ul>
+									</div>
+								</div>
+								<div class="clear"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="pageHeader">
+					<div class="container">
+						<h3>Request 1234567890 <small>Group 1234567890</small><button class="btn-info" id="inProgress">In progress</button></h3>
+					</div>
+				</div>
+				<p />
+				<div class="panel panel-default cl">
+					<div class="panel-heading">JavaScript</div>
+					<div class="panel-body">
+						<pre><code>
+$('#inProgress').hide(); //If decision made, hide the 'In progress' icon.
+						</code></pre>
+					</div>
+				</div>
+				<div class="panel panel-default cl">
+					<div class="panel-heading">HTML</div>
+					<div class="panel-body">
+						<pre><code>
+&lt;div class="navbar-inverse"&gt;
+	&lt;div class="navbar-inner"&gt;
+		&lt;div class="container"&gt;
+			&lt;div class="row-fluid"&gt;
+				&lt;div class="col-sm-7"&gt;
+					&lt;h4 class="logo"&gt;Business Lending Drive&lt;/h4&gt;
+				&lt;/div&gt;
+				&lt;div class="col-sm-3 pull-right"&gt;
+					&lt;i class="fa fa-home"&gt;&lt;/i&gt;
+					&lt;i class="fa fa-search"&gt;&lt;/i&gt;
+					&lt;div class="dropdown pull-right" style="display:inline-block;"&gt;
+					  &lt;button class="btn btn-default dropdown-toggle navbar" type="button" id="dropdownMenu1" data-toggle="dropdown"&gt;
+					    Dropdown
+					    &lt;span class="caret"&gt;&lt;/span&gt;
+					  &lt;/button&gt;
+					  &lt;ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1"&gt;
+					    &lt;li role="presentation"&gt;&lt;a role="menuitem" tabindex="-1" href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+					    &lt;li role="presentation"&gt;&lt;a role="menuitem" tabindex="-1" href="#"&gt;Another action&lt;/a&gt;&lt;/li&gt;
+					    &lt;li role="presentation"&gt;&lt;a role="menuitem" tabindex="-1" href="#"&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+					    &lt;li role="presentation" class="divider"&gt;&lt;/li&gt;
+					    &lt;li role="presentation"&gt;&lt;a role="menuitem" tabindex="-1" href="#"&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+					  &lt;/ul&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div class="clear"&gt;&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="pageHeader"&gt;
+	&lt;div class="container"&gt;
+		&lt;h3&gt;Request#: 1234567890 &lt;small&gt;Group#: &lt;a href="#"&gt;1234567890&lt;/a&gt;&lt;/small&gt;&lt;button class="btn-info" id="inProgress"&gt;In progress&lt;/button&gt;&lt;/h3&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+						</code></pre>
+					</div>
+				</div>
+				<div id="butNav"></div>
+				<h3 class="mac_heading">Button navigation and groups</h3>
+				<h4 class="mac_heading">Button navigation</h4>
+				<p>Buttons can be used as navigation elements, as per below.</p>
+				<button type="button" class="btn btn-link active">Current link</button>
+				<button type="button" class="btn btn-link">Next link</button>
+				<button type="button" class="btn btn-link">Last link</button>
+				<p />
+				<div class="panel panel-default cl">
+					<div class="panel-heading">HTML</div>
+					<div class="panel-body">
+						<pre><code>
+&lt;button type="button" class="btn btn-link active"&gt;Current link&lt;/button&gt;
+&lt;button type="button" class="btn btn-link"&gt;Next link&lt;/button&gt;
+&lt;button type="button" class="btn btn-link"&gt;Last link&lt;/button&gt;
+						</code></pre>
+					</div>
+				</div>
+				<p>Anchor tags, <code>&lt;a&gt;</code>, can also be used to control 'pill' style navigation.</p>
+				<a class="btn btn-link active" id="btn1">Current link</a>
+				<a class="btn btn-link" id="btn2">Next link</a>
+				<a class="btn btn-link"  id="btn3">Last link</a>
+				<p />
+				<div class="panel panel-default cl">
+					<div class="panel-heading">HTML</div>
+					<div class="panel-body">
+						<pre><code>
+&lt;a href="#" class="btn btn-link active"&gt;Current link&lt;/a&gt;
+&lt;a href="#" class="btn btn-link"&gt;Next link&lt;/a&gt;
+&lt;a href="#" class="btn btn-link"&gt;Last link&lt;/a&gt;
+						</code></pre>
+					</div>
+				</div>
+				<h4 class="mac_heading">Button groups</h4>
+				<p>Buttons can also be grouped.</p>
+				<div class="btn-group">
+					<button type="button" class="btn btn-default">Increase</button>
+					<button type="button" class="btn btn-default">Variation</button>
+					<button type="button" class="btn btn-default">Extend</button>
+				</div>
+				<p />
+				<div class="panel panel-default cl">
+					<div class="panel-heading">HTML</div>
+					<div class="panel-body">
+						<pre><code>
+&lt;div class="btn-group"&gt;
+	&lt;button type="button" class="btn btn-default"&gt;Increase&lt;/button&gt;
+	&lt;button type="button" class="btn btn-default"&gt;Variation&lt;/button&gt;
+	&lt;button type="button" class="btn btn-default"&gt;Extend&lt;/button&gt;
+&lt;/div&gt;
+						</code></pre>
+					</div>
+				</div>
+				<p>Individual buttons can be disabled at any point</p>
+				<div class="btn-group">
+				  <button type="button" class="btn btn-default disabled">Increase</button>
+				  <button type="button" class="btn btn-default">Variation</button>
+				  <button type="button" class="btn btn-default">Extend</button>
+				</div><p />
+				<div class="panel panel-default cl">
+					<div class="panel-heading">HTML</div>
+					<div class="panel-body">
+						<pre><code>
+&lt;div class="btn-group"&gt;
+	&lt;button type="button" class="btn btn-default disabled"&gt;Increase&lt;/button&gt;
+	&lt;button type="button" class="btn btn-default"&gt;Variation&lt;/button&gt;
+	&lt;button type="button" class="btn btn-default"&gt;Extend&lt;/button&gt;
+&lt;/div&gt;
+						</code></pre>
+					</div>
+				</div>
+				<div class="top"><a href="#top">^Top</a></div><div class="clear"></div>
+			</div>
+			<div id="page"></div>
+			<h3 class="mac_heading">Pagination</h3>
+			<p>Pagination is styled using the GEL framework as a guide.</p>
+			<ul class="pagination">
+				<li><a href="#prev" rel="prev">&laquo;</a></li>
+				<li><a href="#page-1">1</a></li>
+				<li class="active"><a href="#page-2">2</a></li>
+				<li><a href="#page-3">3</a></li>
+				<li><a href="#page-4">4</a></li>
+				<li><a href="#page-5">5</a></li>
+				<li><a href="#next" rel="next">&raquo;</a></li>
+			</ul>
+			<div class="panel panel-default cl">
+					<div class="panel-heading">HTML</div>
+					<div class="panel-body">
+						<pre><code>
+&lt;ul class="pagination"&gt;
+	&lt;li&gt;&lt;a href="#prev" rel="prev"&gt;&amp;laquo;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="#page-1"&gt;1&lt;/a&gt;&lt;/li&gt;
+	&lt;li class="active"&gt;&lt;a href="#page-2"&gt;2&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="#page-3"&gt;3&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="#page-4"&gt;4&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="#page-5"&gt;5&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="#next" rel="next"&gt;&amp;raquo;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+						</code></pre>
+					</div>
+				</div>
+				<div class="top"><a href="#top">^Top</a></div><div class="clear"></div>
+			<div id="fonts">
+				<h2 class='mac_heading'>Fonts and Typography</h2>
+				<h3 class="mac_heading">Fonts and text</h3>
+				<p>LOLA uses Helvetivca Neue as the primary font. Where Helvetica Neue is not available, a Google Font, 'Roboto', has been used as a substitute. This is brought into the stylesheet via the @import rule.</p>
+				<div class="panel panel-default cl">
+					<div class="panel-heading">CSS</div>
+					<div class="panel-body"><pre><code>
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Regular'), local('Roboto-Regular'), url(../fonts/google.woff) format('woff');
+}</code></pre>
+					<pre><code>body { font-family: "Helvetica Neue", "Roboto", Helvetica, Arial, san-serif; }</pre></code></div>
+				</div>
+				<p>Browser default sizing is used where possible, with default Bootstrap sizing used as a backup where browser sizing is not appropriate or applicable.</p>
+				<div class="top"><a href="#top">^Top</a></div><div class="clear"></div>
+				<h3 class="mac_heading">Links</h3>
+				<p>Standard links are Primary Red with a hover underline as defined below.</p>
+				<p><a href="#">I am a link</a></p>
+			</div>
+			<div id="colours">
+				<div id="coloursWpc">
+					<h3 class='mac_heading'>Colours</h3>
+					<p>Colours are taken from the GEL palette, with some customisation.</p>
+					<div class="palette-box"><div class="palette" style="background-color:#DC241F;">&nbsp;</div>#DC241F<br/>rgb(220,36,31)</div>
+					<div class="palette-box"><div class="palette" style="background-color:#621A4B;">&nbsp;</div>#621A4B<br/>rgb(98,26,75)</div>
+					<div class="palette-box"><div class="palette" style="background-color:#585B5E;">&nbsp;</div>#585B5E<br/>rgb(88,91,94)</div>
+					<div class="palette-box"><div class="palette" style="background-color:#8C7D70;">&nbsp;</div>#8C7D70<br/>rgb(140,125,112)</div>
+					<div class="palette-box"><div class="palette" style="background-color:#9F0029;">&nbsp;</div>#9F0029<br/>rgb(159,0,41)</div>
+					<div class="palette-box"><div class="palette" style="background-color:#CCC;">&nbsp;</div>#CCC<br/>rgb(204,204,204)</div>
+					<div class="palette-box"><div class="palette" style="background-color:#F8F8F8;">&nbsp;</div>#F8F8F8<br/>rgb(248,248,248)</div>
+					<div class="top"><a href="#top">^Top</a></div><div class="clear"></div>
+				</div>
+			</div>
+			<div id="colours">
+				<div id="coloursStg">
+					<h3 class='mac_heading'>Colours</h3>
+					<p>Colours are taken from the GEL palette, with some customisation.</p>
+					<div class="palette-box"><div class="palette" style="background-color:#004833;">&nbsp;</div>#004833<br/>rgb(0,72,51)</div>
+					<div class="palette-box"><div class="palette" style="background-color:#78BE20;">&nbsp;</div>#78BE20<br/>rgb(120,190,32)</div>
+					<div class="palette-box"><div class="palette" style="background-color:#E30000;">&nbsp;</div>#E30000<br/>rgb(227,0,0)</div>
+					<div class="palette-box"><div class="palette" style="background-color:#C30000;">&nbsp;</div>#C30000<br/>rgb(195,0,0)</div>
+					<div class="palette-box"><div class="palette" style="background-color:#CCC;">&nbsp;</div>#CCC<br/>rgb(204,204,204)</div>
+					<div class="palette-box"><div class="palette" style="background-color:#F8F8F8;">&nbsp;</div>#F8F8F8<br/>rgb(248,248,248)</div>
+					<div class="top"><a href="#top">^Top</a></div><div class="clear"></div>
+				</div>
+			</div>
+			<div id="colours">
+				<div id="coloursBom">
+					<h3 class='mac_heading'>Colours</h3>
+					<p>Colours are taken from the GEL palette, with some customisation.</p>
+					<div class="palette-box"><div class="palette" style="background-color:#685AC0;">&nbsp;</div>#685AC0<br/>rgb(104,90,192)</div>
+					<div class="palette-box"><div class="palette" style="background-color:#000;">&nbsp;</div>#000<br/>rgb(0,0,0)</div>
+					<div class="palette-box"><div class="palette" style="background-color:#D60C8C;">&nbsp;</div>#D60C8C<br/>rgb(214,12,140)</div>
+					<div class="palette-box"><div class="palette" style="background-color:#c7c7c7;">&nbsp;</div>#C7C7C7<br/>rgb(199,199,199)</div>
+					<div class="palette-box"><div class="palette" style="background-color:#ECECEC;">&nbsp;</div>#ECECEC<br/>rgb(236,236,236)</div>
+					<div class="palette-box"><div class="palette" style="background-color:#F8F8F8;">&nbsp;</div>#F8F8F8<br/>rgb(248,248,248)</div>
+					<div class="top"><a href="#top">^Top</a></div><div class="clear"></div>
+				</div>
+			</div>
+			<div id="Headings">
+				<h3 class='mac_heading'>Headings</h3>
+				<h1>Header1</h1>
+				<h2>Header2</h2>
+				<h3>Header3</h3>
+				<h4>Header4</h4>
+				<h5>Header5</h5>
+				<h6>Header6</h6>
+				<div class="panel panel-default cl">
+					<div class="panel-heading">HTML</div>
+					<div class="panel-body">
+						<pre><code>
+&lt;h1&gt;Header1&lt;/h1&gt;
+&lt;h2&gt;Header3&lt;/h2&gt; 
+&lt;h3&gt;Header3&lt;/h3&gt; 
+&lt;h4&gt;Header4&lt;/h4&gt; 
+&lt;h5&gt;Header5&lt;/h5&gt; 
+&lt;h6&gt;Header6&lt;/h6&gt; 
+						</code></pre>
+					</div>
+				</div>
+				
+				<div class="top"><a href="#top">^Top</a></div><div class="clear"></div>
+			</div>
+			<div id="icons">
+				<h3 class="mac_heading">Icons</h3>
+				<p>Font Awesome icons are used where Bootstrap standard glyphicons are not available or incomplete.</p>
+				<p>The full list of available icons is as follows:</p>
+				<div class="fontawesome-icon-list">
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/adjust"><i class="fa fa-adjust"></i> fa-adjust</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/anchor"><i class="fa fa-anchor"></i> fa-anchor</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/archive"><i class="fa fa-archive"></i> fa-archive</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/area-chart"><i class="fa fa-area-chart"></i> fa-area-chart</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/arrows"><i class="fa fa-arrows"></i> fa-arrows</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/arrows-h"><i class="fa fa-arrows-h"></i> fa-arrows-h</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/arrows-v"><i class="fa fa-arrows-v"></i> fa-arrows-v</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/asterisk"><i class="fa fa-asterisk"></i> fa-asterisk</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/at"><i class="fa fa-at"></i> fa-at</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/car"><i class="fa fa-automobile"></i> fa-automobile <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/ban"><i class="fa fa-ban"></i> fa-ban</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/university"><i class="fa fa-bank"></i> fa-bank <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/bar-chart"><i class="fa fa-bar-chart"></i> fa-bar-chart</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/bar-chart"><i class="fa fa-bar-chart-o"></i> fa-bar-chart-o <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/barcode"><i class="fa fa-barcode"></i> fa-barcode</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/bars"><i class="fa fa-bars"></i> fa-bars</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/beer"><i class="fa fa-beer"></i> fa-beer</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/bell"><i class="fa fa-bell"></i> fa-bell</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/bell-o"><i class="fa fa-bell-o"></i> fa-bell-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/bell-slash"><i class="fa fa-bell-slash"></i> fa-bell-slash</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/bell-slash-o"><i class="fa fa-bell-slash-o"></i> fa-bell-slash-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/bicycle"><i class="fa fa-bicycle"></i> fa-bicycle</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/binoculars"><i class="fa fa-binoculars"></i> fa-binoculars</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/birthday-cake"><i class="fa fa-birthday-cake"></i> fa-birthday-cake</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/bolt"><i class="fa fa-bolt"></i> fa-bolt</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/bomb"><i class="fa fa-bomb"></i> fa-bomb</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/book"><i class="fa fa-book"></i> fa-book</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/bookmark"><i class="fa fa-bookmark"></i> fa-bookmark</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/bookmark-o"><i class="fa fa-bookmark-o"></i> fa-bookmark-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/briefcase"><i class="fa fa-briefcase"></i> fa-briefcase</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/bug"><i class="fa fa-bug"></i> fa-bug</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/building"><i class="fa fa-building"></i> fa-building</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/building-o"><i class="fa fa-building-o"></i> fa-building-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/bullhorn"><i class="fa fa-bullhorn"></i> fa-bullhorn</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/bullseye"><i class="fa fa-bullseye"></i> fa-bullseye</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/bus"><i class="fa fa-bus"></i> fa-bus</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/taxi"><i class="fa fa-cab"></i> fa-cab <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/calculator"><i class="fa fa-calculator"></i> fa-calculator</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/calendar"><i class="fa fa-calendar"></i> fa-calendar</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/calendar-o"><i class="fa fa-calendar-o"></i> fa-calendar-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/camera"><i class="fa fa-camera"></i> fa-camera</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/camera-retro"><i class="fa fa-camera-retro"></i> fa-camera-retro</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/car"><i class="fa fa-car"></i> fa-car</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/caret-square-o-down"><i class="fa fa-caret-square-o-down"></i> fa-caret-square-o-down</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/caret-square-o-left"><i class="fa fa-caret-square-o-left"></i> fa-caret-square-o-left</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/caret-square-o-right"><i class="fa fa-caret-square-o-right"></i> fa-caret-square-o-right</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/caret-square-o-up"><i class="fa fa-caret-square-o-up"></i> fa-caret-square-o-up</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/cc"><i class="fa fa-cc"></i> fa-cc</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/certificate"><i class="fa fa-certificate"></i> fa-certificate</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/check"><i class="fa fa-check"></i> fa-check</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/check-circle"><i class="fa fa-check-circle"></i> fa-check-circle</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/check-circle-o"><i class="fa fa-check-circle-o"></i> fa-check-circle-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/check-square"><i class="fa fa-check-square"></i> fa-check-square</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/check-square-o"><i class="fa fa-check-square-o"></i> fa-check-square-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/child"><i class="fa fa-child"></i> fa-child</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/circle"><i class="fa fa-circle"></i> fa-circle</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/circle-o"><i class="fa fa-circle-o"></i> fa-circle-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/circle-o-notch"><i class="fa fa-circle-o-notch"></i> fa-circle-o-notch</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/circle-thin"><i class="fa fa-circle-thin"></i> fa-circle-thin</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/clock-o"><i class="fa fa-clock-o"></i> fa-clock-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/times"><i class="fa fa-close"></i> fa-close <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/cloud"><i class="fa fa-cloud"></i> fa-cloud</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/cloud-download"><i class="fa fa-cloud-download"></i> fa-cloud-download</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/cloud-upload"><i class="fa fa-cloud-upload"></i> fa-cloud-upload</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/code"><i class="fa fa-code"></i> fa-code</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/code-fork"><i class="fa fa-code-fork"></i> fa-code-fork</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/coffee"><i class="fa fa-coffee"></i> fa-coffee</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/cog"><i class="fa fa-cog"></i> fa-cog</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/cogs"><i class="fa fa-cogs"></i> fa-cogs</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/comment"><i class="fa fa-comment"></i> fa-comment</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/comment-o"><i class="fa fa-comment-o"></i> fa-comment-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/comments"><i class="fa fa-comments"></i> fa-comments</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/comments-o"><i class="fa fa-comments-o"></i> fa-comments-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/compass"><i class="fa fa-compass"></i> fa-compass</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/copyright"><i class="fa fa-copyright"></i> fa-copyright</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/credit-card"><i class="fa fa-credit-card"></i> fa-credit-card</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/crop"><i class="fa fa-crop"></i> fa-crop</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/crosshairs"><i class="fa fa-crosshairs"></i> fa-crosshairs</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/cube"><i class="fa fa-cube"></i> fa-cube</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/cubes"><i class="fa fa-cubes"></i> fa-cubes</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/cutlery"><i class="fa fa-cutlery"></i> fa-cutlery</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/tachometer"><i class="fa fa-dashboard"></i> fa-dashboard <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/database"><i class="fa fa-database"></i> fa-database</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/desktop"><i class="fa fa-desktop"></i> fa-desktop</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/dot-circle-o"><i class="fa fa-dot-circle-o"></i> fa-dot-circle-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/download"><i class="fa fa-download"></i> fa-download</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/pencil-square-o"><i class="fa fa-edit"></i> fa-edit <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/ellipsis-h"><i class="fa fa-ellipsis-h"></i> fa-ellipsis-h</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/ellipsis-v"><i class="fa fa-ellipsis-v"></i> fa-ellipsis-v</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/envelope"><i class="fa fa-envelope"></i> fa-envelope</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/envelope-o"><i class="fa fa-envelope-o"></i> fa-envelope-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/envelope-square"><i class="fa fa-envelope-square"></i> fa-envelope-square</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/eraser"><i class="fa fa-eraser"></i> fa-eraser</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/exchange"><i class="fa fa-exchange"></i> fa-exchange</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/exclamation"><i class="fa fa-exclamation"></i> fa-exclamation</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/exclamation-circle"><i class="fa fa-exclamation-circle"></i> fa-exclamation-circle</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/exclamation-triangle"><i class="fa fa-exclamation-triangle"></i> fa-exclamation-triangle</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/external-link"><i class="fa fa-external-link"></i> fa-external-link</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/external-link-square"><i class="fa fa-external-link-square"></i> fa-external-link-square</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/eye"><i class="fa fa-eye"></i> fa-eye</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/eye-slash"><i class="fa fa-eye-slash"></i> fa-eye-slash</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/eyedropper"><i class="fa fa-eyedropper"></i> fa-eyedropper</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/fax"><i class="fa fa-fax"></i> fa-fax</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/female"><i class="fa fa-female"></i> fa-female</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/fighter-jet"><i class="fa fa-fighter-jet"></i> fa-fighter-jet</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/file-archive-o"><i class="fa fa-file-archive-o"></i> fa-file-archive-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/file-audio-o"><i class="fa fa-file-audio-o"></i> fa-file-audio-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/file-code-o"><i class="fa fa-file-code-o"></i> fa-file-code-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/file-excel-o"><i class="fa fa-file-excel-o"></i> fa-file-excel-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/file-image-o"><i class="fa fa-file-image-o"></i> fa-file-image-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/file-video-o"><i class="fa fa-file-movie-o"></i> fa-file-movie-o <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/file-pdf-o"><i class="fa fa-file-pdf-o"></i> fa-file-pdf-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/file-image-o"><i class="fa fa-file-photo-o"></i> fa-file-photo-o <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/file-image-o"><i class="fa fa-file-picture-o"></i> fa-file-picture-o <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/file-powerpoint-o"><i class="fa fa-file-powerpoint-o"></i> fa-file-powerpoint-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/file-audio-o"><i class="fa fa-file-sound-o"></i> fa-file-sound-o <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/file-video-o"><i class="fa fa-file-video-o"></i> fa-file-video-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/file-word-o"><i class="fa fa-file-word-o"></i> fa-file-word-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/file-archive-o"><i class="fa fa-file-zip-o"></i> fa-file-zip-o <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/film"><i class="fa fa-film"></i> fa-film</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/filter"><i class="fa fa-filter"></i> fa-filter</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/fire"><i class="fa fa-fire"></i> fa-fire</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/fire-extinguisher"><i class="fa fa-fire-extinguisher"></i> fa-fire-extinguisher</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/flag"><i class="fa fa-flag"></i> fa-flag</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/flag-checkered"><i class="fa fa-flag-checkered"></i> fa-flag-checkered</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/flag-o"><i class="fa fa-flag-o"></i> fa-flag-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/bolt"><i class="fa fa-flash"></i> fa-flash <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/flask"><i class="fa fa-flask"></i> fa-flask</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/folder"><i class="fa fa-folder"></i> fa-folder</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/folder-o"><i class="fa fa-folder-o"></i> fa-folder-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/folder-open"><i class="fa fa-folder-open"></i> fa-folder-open</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/folder-open-o"><i class="fa fa-folder-open-o"></i> fa-folder-open-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/frown-o"><i class="fa fa-frown-o"></i> fa-frown-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/futbol-o"><i class="fa fa-futbol-o"></i> fa-futbol-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/gamepad"><i class="fa fa-gamepad"></i> fa-gamepad</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/gavel"><i class="fa fa-gavel"></i> fa-gavel</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/cog"><i class="fa fa-gear"></i> fa-gear <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/cogs"><i class="fa fa-gears"></i> fa-gears <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/gift"><i class="fa fa-gift"></i> fa-gift</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/glass"><i class="fa fa-glass"></i> fa-glass</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/globe"><i class="fa fa-globe"></i> fa-globe</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/graduation-cap"><i class="fa fa-graduation-cap"></i> fa-graduation-cap</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/users"><i class="fa fa-group"></i> fa-group <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/hdd-o"><i class="fa fa-hdd-o"></i> fa-hdd-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/headphones"><i class="fa fa-headphones"></i> fa-headphones</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/heart"><i class="fa fa-heart"></i> fa-heart</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/heart-o"><i class="fa fa-heart-o"></i> fa-heart-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/history"><i class="fa fa-history"></i> fa-history</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/home"><i class="fa fa-home"></i> fa-home</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/picture-o"><i class="fa fa-image"></i> fa-image <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/inbox"><i class="fa fa-inbox"></i> fa-inbox</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/info"><i class="fa fa-info"></i> fa-info</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/info-circle"><i class="fa fa-info-circle"></i> fa-info-circle</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/university"><i class="fa fa-institution"></i> fa-institution <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/key"><i class="fa fa-key"></i> fa-key</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/keyboard-o"><i class="fa fa-keyboard-o"></i> fa-keyboard-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/language"><i class="fa fa-language"></i> fa-language</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/laptop"><i class="fa fa-laptop"></i> fa-laptop</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/leaf"><i class="fa fa-leaf"></i> fa-leaf</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/gavel"><i class="fa fa-legal"></i> fa-legal <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/lemon-o"><i class="fa fa-lemon-o"></i> fa-lemon-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/level-down"><i class="fa fa-level-down"></i> fa-level-down</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/level-up"><i class="fa fa-level-up"></i> fa-level-up</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/life-ring"><i class="fa fa-life-bouy"></i> fa-life-bouy <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/life-ring"><i class="fa fa-life-buoy"></i> fa-life-buoy <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/life-ring"><i class="fa fa-life-ring"></i> fa-life-ring</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/life-ring"><i class="fa fa-life-saver"></i> fa-life-saver <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/lightbulb-o"><i class="fa fa-lightbulb-o"></i> fa-lightbulb-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/line-chart"><i class="fa fa-line-chart"></i> fa-line-chart</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/location-arrow"><i class="fa fa-location-arrow"></i> fa-location-arrow</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/lock"><i class="fa fa-lock"></i> fa-lock</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/magic"><i class="fa fa-magic"></i> fa-magic</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/magnet"><i class="fa fa-magnet"></i> fa-magnet</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/share"><i class="fa fa-mail-forward"></i> fa-mail-forward <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/reply"><i class="fa fa-mail-reply"></i> fa-mail-reply <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/reply-all"><i class="fa fa-mail-reply-all"></i> fa-mail-reply-all <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/male"><i class="fa fa-male"></i> fa-male</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/map-marker"><i class="fa fa-map-marker"></i> fa-map-marker</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/meh-o"><i class="fa fa-meh-o"></i> fa-meh-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/microphone"><i class="fa fa-microphone"></i> fa-microphone</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/microphone-slash"><i class="fa fa-microphone-slash"></i> fa-microphone-slash</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/minus"><i class="fa fa-minus"></i> fa-minus</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/minus-circle"><i class="fa fa-minus-circle"></i> fa-minus-circle</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/minus-square"><i class="fa fa-minus-square"></i> fa-minus-square</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/minus-square-o"><i class="fa fa-minus-square-o"></i> fa-minus-square-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/mobile"><i class="fa fa-mobile"></i> fa-mobile</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/mobile"><i class="fa fa-mobile-phone"></i> fa-mobile-phone <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/money"><i class="fa fa-money"></i> fa-money</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/moon-o"><i class="fa fa-moon-o"></i> fa-moon-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/graduation-cap"><i class="fa fa-mortar-board"></i> fa-mortar-board <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/music"><i class="fa fa-music"></i> fa-music</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/bars"><i class="fa fa-navicon"></i> fa-navicon <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/newspaper-o"><i class="fa fa-newspaper-o"></i> fa-newspaper-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/paint-brush"><i class="fa fa-paint-brush"></i> fa-paint-brush</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/paper-plane"><i class="fa fa-paper-plane"></i> fa-paper-plane</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/paper-plane-o"><i class="fa fa-paper-plane-o"></i> fa-paper-plane-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/paw"><i class="fa fa-paw"></i> fa-paw</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/pencil"><i class="fa fa-pencil"></i> fa-pencil</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/pencil-square"><i class="fa fa-pencil-square"></i> fa-pencil-square</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/pencil-square-o"><i class="fa fa-pencil-square-o"></i> fa-pencil-square-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/phone"><i class="fa fa-phone"></i> fa-phone</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/phone-square"><i class="fa fa-phone-square"></i> fa-phone-square</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/picture-o"><i class="fa fa-photo"></i> fa-photo <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/picture-o"><i class="fa fa-picture-o"></i> fa-picture-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/pie-chart"><i class="fa fa-pie-chart"></i> fa-pie-chart</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/plane"><i class="fa fa-plane"></i> fa-plane</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/plug"><i class="fa fa-plug"></i> fa-plug</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/plus"><i class="fa fa-plus"></i> fa-plus</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/plus-circle"><i class="fa fa-plus-circle"></i> fa-plus-circle</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/plus-square"><i class="fa fa-plus-square"></i> fa-plus-square</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/plus-square-o"><i class="fa fa-plus-square-o"></i> fa-plus-square-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/power-off"><i class="fa fa-power-off"></i> fa-power-off</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/print"><i class="fa fa-print"></i> fa-print</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/puzzle-piece"><i class="fa fa-puzzle-piece"></i> fa-puzzle-piece</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/qrcode"><i class="fa fa-qrcode"></i> fa-qrcode</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/question"><i class="fa fa-question"></i> fa-question</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/question-circle"><i class="fa fa-question-circle"></i> fa-question-circle</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/quote-left"><i class="fa fa-quote-left"></i> fa-quote-left</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/quote-right"><i class="fa fa-quote-right"></i> fa-quote-right</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/random"><i class="fa fa-random"></i> fa-random</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/recycle"><i class="fa fa-recycle"></i> fa-recycle</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/refresh"><i class="fa fa-refresh"></i> fa-refresh</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/times"><i class="fa fa-remove"></i> fa-remove <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/bars"><i class="fa fa-reorder"></i> fa-reorder <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/reply"><i class="fa fa-reply"></i> fa-reply</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/reply-all"><i class="fa fa-reply-all"></i> fa-reply-all</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/retweet"><i class="fa fa-retweet"></i> fa-retweet</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/road"><i class="fa fa-road"></i> fa-road</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/rocket"><i class="fa fa-rocket"></i> fa-rocket</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/rss"><i class="fa fa-rss"></i> fa-rss</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/rss-square"><i class="fa fa-rss-square"></i> fa-rss-square</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/search"><i class="fa fa-search"></i> fa-search</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/search-minus"><i class="fa fa-search-minus"></i> fa-search-minus</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/search-plus"><i class="fa fa-search-plus"></i> fa-search-plus</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/paper-plane"><i class="fa fa-send"></i> fa-send <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/paper-plane-o"><i class="fa fa-send-o"></i> fa-send-o <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/share"><i class="fa fa-share"></i> fa-share</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/share-alt"><i class="fa fa-share-alt"></i> fa-share-alt</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/share-alt-square"><i class="fa fa-share-alt-square"></i> fa-share-alt-square</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/share-square"><i class="fa fa-share-square"></i> fa-share-square</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/share-square-o"><i class="fa fa-share-square-o"></i> fa-share-square-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/shield"><i class="fa fa-shield"></i> fa-shield</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/shopping-cart"><i class="fa fa-shopping-cart"></i> fa-shopping-cart</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/sign-in"><i class="fa fa-sign-in"></i> fa-sign-in</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/sign-out"><i class="fa fa-sign-out"></i> fa-sign-out</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/signal"><i class="fa fa-signal"></i> fa-signal</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/sitemap"><i class="fa fa-sitemap"></i> fa-sitemap</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/sliders"><i class="fa fa-sliders"></i> fa-sliders</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/smile-o"><i class="fa fa-smile-o"></i> fa-smile-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/futbol-o"><i class="fa fa-soccer-ball-o"></i> fa-soccer-ball-o <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/sort"><i class="fa fa-sort"></i> fa-sort</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/sort-alpha-asc"><i class="fa fa-sort-alpha-asc"></i> fa-sort-alpha-asc</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/sort-alpha-desc"><i class="fa fa-sort-alpha-desc"></i> fa-sort-alpha-desc</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/sort-amount-asc"><i class="fa fa-sort-amount-asc"></i> fa-sort-amount-asc</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/sort-amount-desc"><i class="fa fa-sort-amount-desc"></i> fa-sort-amount-desc</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/sort-asc"><i class="fa fa-sort-asc"></i> fa-sort-asc</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/sort-desc"><i class="fa fa-sort-desc"></i> fa-sort-desc</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/sort-desc"><i class="fa fa-sort-down"></i> fa-sort-down <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/sort-numeric-asc"><i class="fa fa-sort-numeric-asc"></i> fa-sort-numeric-asc</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/sort-numeric-desc"><i class="fa fa-sort-numeric-desc"></i> fa-sort-numeric-desc</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/sort-asc"><i class="fa fa-sort-up"></i> fa-sort-up <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/space-shuttle"><i class="fa fa-space-shuttle"></i> fa-space-shuttle</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/spinner"><i class="fa fa-spinner"></i> fa-spinner</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/spoon"><i class="fa fa-spoon"></i> fa-spoon</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/square"><i class="fa fa-square"></i> fa-square</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/square-o"><i class="fa fa-square-o"></i> fa-square-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/star"><i class="fa fa-star"></i> fa-star</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/star-half"><i class="fa fa-star-half"></i> fa-star-half</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/star-half-o"><i class="fa fa-star-half-empty"></i> fa-star-half-empty <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/star-half-o"><i class="fa fa-star-half-full"></i> fa-star-half-full <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/star-half-o"><i class="fa fa-star-half-o"></i> fa-star-half-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/star-o"><i class="fa fa-star-o"></i> fa-star-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/suitcase"><i class="fa fa-suitcase"></i> fa-suitcase</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/sun-o"><i class="fa fa-sun-o"></i> fa-sun-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/life-ring"><i class="fa fa-support"></i> fa-support <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/tablet"><i class="fa fa-tablet"></i> fa-tablet</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/tachometer"><i class="fa fa-tachometer"></i> fa-tachometer</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/tag"><i class="fa fa-tag"></i> fa-tag</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/tags"><i class="fa fa-tags"></i> fa-tags</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/tasks"><i class="fa fa-tasks"></i> fa-tasks</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/taxi"><i class="fa fa-taxi"></i> fa-taxi</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/terminal"><i class="fa fa-terminal"></i> fa-terminal</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/thumb-tack"><i class="fa fa-thumb-tack"></i> fa-thumb-tack</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/thumbs-down"><i class="fa fa-thumbs-down"></i> fa-thumbs-down</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/thumbs-o-down"><i class="fa fa-thumbs-o-down"></i> fa-thumbs-o-down</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/thumbs-o-up"><i class="fa fa-thumbs-o-up"></i> fa-thumbs-o-up</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/thumbs-up"><i class="fa fa-thumbs-up"></i> fa-thumbs-up</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/ticket"><i class="fa fa-ticket"></i> fa-ticket</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/times"><i class="fa fa-times"></i> fa-times</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/times-circle"><i class="fa fa-times-circle"></i> fa-times-circle</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/times-circle-o"><i class="fa fa-times-circle-o"></i> fa-times-circle-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/tint"><i class="fa fa-tint"></i> fa-tint</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/caret-square-o-down"><i class="fa fa-toggle-down"></i> fa-toggle-down <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/caret-square-o-left"><i class="fa fa-toggle-left"></i> fa-toggle-left <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/toggle-off"><i class="fa fa-toggle-off"></i> fa-toggle-off</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/toggle-on"><i class="fa fa-toggle-on"></i> fa-toggle-on</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/caret-square-o-right"><i class="fa fa-toggle-right"></i> fa-toggle-right <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/caret-square-o-up"><i class="fa fa-toggle-up"></i> fa-toggle-up <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/trash"><i class="fa fa-trash"></i> fa-trash</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/trash-o"><i class="fa fa-trash-o"></i> fa-trash-o</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/tree"><i class="fa fa-tree"></i> fa-tree</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/trophy"><i class="fa fa-trophy"></i> fa-trophy</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/truck"><i class="fa fa-truck"></i> fa-truck</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/tty"><i class="fa fa-tty"></i> fa-tty</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/umbrella"><i class="fa fa-umbrella"></i> fa-umbrella</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/university"><i class="fa fa-university"></i> fa-university</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/unlock"><i class="fa fa-unlock"></i> fa-unlock</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/unlock-alt"><i class="fa fa-unlock-alt"></i> fa-unlock-alt</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/sort"><i class="fa fa-unsorted"></i> fa-unsorted <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/upload"><i class="fa fa-upload"></i> fa-upload</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/user"><i class="fa fa-user"></i> fa-user</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/users"><i class="fa fa-users"></i> fa-users</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/video-camera"><i class="fa fa-video-camera"></i> fa-video-camera</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/volume-down"><i class="fa fa-volume-down"></i> fa-volume-down</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/volume-off"><i class="fa fa-volume-off"></i> fa-volume-off</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/volume-up"><i class="fa fa-volume-up"></i> fa-volume-up</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/exclamation-triangle"><i class="fa fa-warning"></i> fa-warning <span class="text-muted">(alias)</span></a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/wheelchair"><i class="fa fa-wheelchair"></i> fa-wheelchair</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/wifi"><i class="fa fa-wifi"></i> fa-wifi</a></div>
+				    
+				      <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/wrench"><i class="fa fa-wrench"></i> fa-wrench</a></div>
+				    
+				  </div>
+
+				  <div class="clear"></div>
+				  <p />
+				  	<div class="panel panel-default cl">
+						<div class="panel-heading">HTML</div>
+							<div class="panel-body">
+								<pre>
+									<code>
+&lt;i class="fa fa-check"&gt;&lt;/i&gt;
+									</code>
+								</pre>
+							</div>
+					</div>
+				<div class="top"><a href="#top">^Top</a></div><div class="clear"></div>
+			</div>
+			<div id="tables">
+				<h2 class='mac_heading'>Tables</h2>
+					<h4>Default Table</h4>
+					<table class='table'>
+						<thead>
+							<tr>
+								<th>Heading1</th>
+								<th>Heading2</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>data1</td>
+								<td>data1</td>
+							</tr>
+							<tr>
+								<td>data2</td>
+								<td>data2</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="panel panel-default cl">
+						<div class="panel-heading">HTML</div>
+							<div class="panel-body">
+								<pre>
+									<code>
+&lt;table class='table'&gt; 
+	&lt;thead&gt; 	
+		&lt;tr&gt;
+			&lt;th&gt;Heading1&lt;/th&gt;
+			&lt;th&gt;Heading2&lt;/th&gt;
+		&lt;/tr&gt; 
+	&lt;/thead&gt; 
+	&lt;tbody&gt; 
+		&lt;tr&gt;
+			&lt;td&gt;data1&lt;/td&gt;
+			&lt;td&gt;data1&lt;/td&gt;
+		&lt;/tr&gt; 
+		&lt;tr&gt;
+			&lt;td&gt;data2&lt;/td&gt;
+			&lt;td&gt;data2&lt;/td&gt;
+		&lt;/tr&gt; 
+	&lt;/tbody&gt; 
+&lt;/table&gt;
+									</code>
+								</pre>			
+							</div>
+					</div>
+					<h4>Striped Table</h4>
+					<table class='table table-striped'>
+						<thead>
+							<tr>
+								<th>Heading1</th>
+								<th>Heading2</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>data1</td>
+								<td>data1</td>
+							</tr>
+							<tr>
+								<td>data2</td>
+								<td>data2</td>
+							</tr>
+							<tr>
+								<td>data3</td>
+								<td>data3</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="panel panel-default cl">
+						<div class="panel-heading">HTML</div>
+							<div class="panel-body">
+								<pre>
+									<code>
+&lt;table class='table table-striped'&gt; 
+	&lt;thead&gt; 
+		&lt;tr&gt;
+			&lt;th&gt;Heading1&lt;/th&gt;
+			&lt;th&gt;Heading2&lt;/th&gt;
+		&lt;/tr&gt; 
+	&lt;/thead&gt; 
+	&lt;tbody&gt; 
+		&lt;tr&gt;
+			&lt;td&gt;data1&lt;/td&gt;
+			&lt;td&gt;data1&lt;/td&gt; 
+		&lt;/tr&gt; 
+		&lt;tr&gt;
+			&lt;td&gt;data2&lt;/td&gt;
+			&lt;td&gt;data2&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;data3&lt;/td&gt;
+			&lt;td&gt;data3&lt;/td&gt;
+		&lt;/tr&gt;  
+	&lt;/tbody&gt; 
+&lt;/table&gt;										
+									</code>
+								</pre>			
+							</div>
+					</div>
+					<h4>Striped Table with hover</h4>
+					<table class='table table-striped table-hover'>
+						<thead>
+							<tr>
+								<th>Heading1 <i class="fa fa-sort pull-left">&nbsp;</i></th>
+								<th>Heading2</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>data1</td>
+								<td>data1</td>
+							</tr>
+							<tr>
+								<td>data2</td>
+								<td>data2</td>
+							</tr>
+							<tr>
+								<td>data3</td>
+								<td>data3</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="panel panel-default cl">
+						<div class="panel-heading">HTML</div>
+							<div class="panel-body">
+								<pre>
+									<code>
+&lt;table class='table table-striped table-hover'&gt; 
+	&lt;thead&gt; 
+		&lt;tr&gt;
+			&lt;th&gt;Heading1&lt;/th&gt;
+			&lt;th&gt;Heading2&lt;/th&gt;
+		&lt;/tr&gt; 
+	&lt;/thead&gt; 
+	&lt;tbody&gt; 
+		&lt;tr&gt;
+			&lt;td&gt;data1&lt;/td&gt;
+			&lt;td&gt;data1&lt;/td&gt; 
+		&lt;/tr&gt; 
+		&lt;tr&gt;
+			&lt;td&gt;data2&lt;/td&gt;
+			&lt;td&gt;data2&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;data3&lt;/td&gt;
+			&lt;td&gt;data3&lt;/td&gt;
+		&lt;/tr&gt;  
+	&lt;/tbody&gt; 
+&lt;/table&gt;										
+									</code>
+								</pre>			
+							</div>
+					</div>
+					<h4>Striped Table with hover and 'faux' nested table</h4>
+					<p>Occaisionally, it will be neccessary to create the appearance of a nested table within a master table. This can be acheived by applying a <code>colspan</code> and <code>class="table-faux-head"</code> to the appropriate TD class.</p>
+					<table class='table table-striped table-hover'>
+						<thead>
+							<tr>
+								<th>Heading1</th>
+								<th>Heading2</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>data1</td>
+								<td>data1</td>
+							</tr>
+							<tr>
+								<td>data2</td>
+								<td>data2</td>
+							</tr>
+							<tr>
+								<td class="table-faux-head" colspan="2">New Heading <i class="fa fa-info-circle headIcon"></i></td>
+							</tr>
+							<tr>
+								<td>data4</td>
+								<td>data4</td>
+							</tr>
+							<tr>
+								<td>data4</td>
+								<td>data4</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="panel panel-default cl">
+						<div class="panel-heading">HTML</div>
+							<div class="panel-body">
+								<pre>
+									<code>
+&lt;table class='table table-striped table-hover'&gt; 
+	&lt;thead&gt; 
+		&lt;tr&gt;
+			&lt;th&gt;Heading1&lt;/th&gt;
+			&lt;th&gt;Heading2&lt;/th&gt;
+		&lt;/tr&gt; 
+	&lt;/thead&gt; 
+	&lt;tbody&gt; 
+		&lt;tr&gt;
+			&lt;td&gt;data1&lt;/td&gt;
+			&lt;td&gt;data1&lt;/td&gt; 
+		&lt;/tr&gt; 
+		&lt;tr&gt;
+			&lt;td&gt;data2&lt;/td&gt;
+			&lt;td&gt;data2&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td class="table-faux-head" colspan="2"&gt;New Heading&lt;i class="fa fa-info-circle headIcon"&gt;&lt;/i&gt;&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;data4&lt;/td&gt;
+			&lt;td&gt;data4&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;data4&lt;/td&gt;
+			&lt;td&gt;data4&lt;/td&gt;
+		&lt;/tr&gt;  
+	&lt;/tbody&gt; 
+&lt;/table&gt;										
+									</code>
+								</pre>			
+							</div>
+					</div>
+
+					<h4>Bordered Table</h4>
+					<table class='table table-bordered'>
+						<thead>
+							<tr>
+								<th>Heading1</th>
+								<th>Heading2</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>data1</td>
+								<td>data1</td>
+							</tr>
+							<tr>
+								<td>data2</td>
+								<td>data2</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="panel panel-default cl">
+						<div class="panel-heading">HTML</div>
+							<div class="panel-body">
+								<pre>
+									<code>
+&lt;table class='table table-bordered'&gt; 
+	&lt;thead&gt; 
+		&lt;tr&gt;
+			&lt;th&gt;Heading1&lt;/th&gt;
+			&lt;th&gt;Heading2&lt;/th&gt;
+		&lt;/tr&gt; 
+	&lt;/thead&gt; 
+	&lt;tbody&gt; 
+		&lt;tr&gt;
+			&lt;td&gt;data1&lt;/td&gt;
+			&lt;td&gt;data1&lt;/td&gt;
+		&lt;/tr&gt; 
+		&lt;tr&gt;
+			&lt;td&gt;data2&lt;/td&gt;
+			&lt;td&gt;data2&lt;/td&gt;
+		&lt;/tr&gt; 
+	&lt;/tbody&gt; 
+&lt;/table&gt;
+									</code>
+								</pre>			
+							</div>
+					</div>
+					
+					<h4>Striped and Bordered Table</h4>
+					<table class='table table-bordered table-striped'>
+						<thead>
+							<tr>
+								<th>Heading1</th>
+								<th>Heading2</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>data1</td>
+								<td>data1</td>
+							</tr>
+							<tr>
+								<td>data2</td>
+								<td>data2</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="panel panel-default cl">
+						<div class="panel-heading">HTML</div>
+							<div class="panel-body">
+								<pre>
+									<code>
+&lt;table class='table table-striped table-bordered'&gt; 
+	&lt;thead&gt; 
+		&lt;tr&gt;
+			&lt;th&gt;Heading1&lt;/th&gt;
+			&lt;th&gt;Heading2&lt;/th&gt;
+		&lt;/tr&gt; 
+	&lt;/thead&gt; 
+	&lt;tbody&gt; 
+		&lt;tr&gt;
+			&lt;td&gt;data1&lt;/td&gt;
+			&lt;td&gt;data1&lt;/td&gt;
+		&lt;/tr&gt; 
+		&lt;tr&gt;
+			&lt;td&gt;data2&lt;/td&gt;
+			&lt;td&gt;data2&lt;/td&gt;
+		&lt;/tr&gt; 
+	&lt;/tbody&gt; 
+&lt;/table&gt;
+									</code>
+								</pre>			
+							</div>
+					</div>
+					<h4>Table Toggle with sort icon</h4>
+						<table class="table table-bordered table-hidden">
+							<thead>
+								<tr>
+									<th><i class="fa fa-sort pull-left">&nbsp;</i>Asset</th>
+									<th><i class="fa fa-sort pull-left">&nbsp;</i>Owner</th>
+									<th><i class="fa fa-sort pull-left">&nbsp;</i>Avail Lending Value</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<i class="fa fa-plus-square accordian-toggle"></i>
+										Property
+									</td>
+									<td>Srinivas</td>
+									<td>$600,000</td>
+								</tr>
+								
+								<tr>
+									<td class="hiddenRow" colspan="4">
+										<div class="accordian-body row-fluid hide">
+											<table class="table table-border-less">
+												<tbody>		
+													<tr>
+														<td class="text-middle span3">
+															Asset Type:
+														</td>
+																	
+														<td class="span9">
+															House and single dwelling
+														</td>
+													</tr>
+													<tr>
+														<td class="text-middle span3">
+															Address:
+														</td>
+															
+														<td class="span9">
+															House and single dwelling
+														</td>
+													</tr>
+													<tr>
+														<td class="text-middle span3">
+															39 Pitt Street
+														</td>
+															
+														<td class="span9">
+															$800,000
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div> 
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="panel panel-default cl">
+						<div class="panel-heading">HTML</div>
+							<div class="panel-body">
+								<pre>
+									<code>
+&lt;table class=&quot;table table-bordered table-hidden&quot;&gt;
+	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;th&gt;&lt;i class="fa fa-sort pull-left"&gt;&amp;nbsp;&lt;/i&gt;Asset&lt;/th&gt;
+			&lt;th&gt;&lt;i class="fa fa-sort pull-left"&gt;&amp;nbsp;&lt;/i&gt;Owner&lt;/th&gt;
+			&lt;th&gt;&lt;i class="fa fa-sort pull-left"&gt;&amp;nbsp;&lt;/i&gt;Avail Lending Value&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td&gt;&lt;i class=&quot;fa fa-plus-square accordian-toggle&quot;&gt;&lt;/i&gt; Property &lt;/td&gt;
+			&lt;td&gt;Srinivas&lt;/td&gt; &lt;td&gt;$600,000&lt;/td&gt; 
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td class=&quot;hiddenRow&quot;colspan=&quot;4&quot;&gt;
+				&lt;div class=&quot;accordian-body row-fluid hide&quot;&gt; 
+					&lt;table class=&quot;table table-border-less&quot;&gt; 
+						&lt;tbody&gt; 
+							&lt;tr&gt; 
+								&lt;td class=&quot;text-middle span3&quot;&gt; Asset Type: &lt;/td&gt; 
+								&lt;td class=&quot;span9&quot;&gt; House and single dwelling &lt;/td&gt; 
+							&lt;/tr&gt; 
+							&lt;tr&gt; 
+								&lt;td class=&quot;text-middle span3&quot;&gt; Address: &lt;/td&gt;
+								&lt;td class=&quot;span9&quot;&gt; House and single dwelling &lt;/td&gt; 
+							&lt;/tr&gt; 
+							&lt;tr&gt; 
+								&lt;td class=&quot;text-middle span3&quot;&gt; 39 Pitt Street &lt;/td&gt;
+								&lt;td class=&quot;span9&quot;&gt; $800,000&lt;/td&gt; 
+							&lt;/tr&gt; 
+						&lt;/tbody&gt; 
+					&lt;/table&gt; 
+				&lt;/div&gt; 
+			&lt;/td&gt; 
+		&lt;/tr&gt; 
+	&lt;/tbody&gt; 
+&lt;/table&gt;
+									</code>
+								</pre>			
+							</div>
+						</div>
+						
+					<h4>Table With Selected Checkbox</h4>
+						<table class="table table-border-less table-limits table-striped table-hidden">
+							<thead>
+								<tr>
+									<th class='no-bg col-md-6'>Asset</th>
+									<th class='col-md-2'>Owner</th>
+									<th class='col-md-3'>Avail Lending Value</th>
+									<th class='no-bg col-md-1'>&nbsp;</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<i class="fa fa-plus-square accordian-toggle"></i>
+										Property
+									</td>
+									<td>Srinivas</td>
+									<td>$600,000</td>
+									<td><span class='fa fa-square-o fa-2x text-green custom-checkbox'><input type='checkbox'></span></td>
+								</tr>
+								
+								<tr>
+									<td class="hiddenRow" colspan="4">
+										<div class="accordian-body row-fluid hide">
+											<table class="table table-border-less">
+												<tbody>		
+													<tr>
+														<td class="text-middle span3 ">
+															Asset Type:
+														</td>
+																	
+														<td class="span9">
+															House and single dwelling
+														</td>
+													</tr>
+													<tr>
+														<td class="text-middle span3">
+															Address:
+														</td>
+															
+														<td class="span9">
+															House and single dwelling
+														</td>
+													</tr>
+													<tr>
+														<td class="text-middle span3">
+															39 Pitt Street
+														</td>
+															
+														<td class="span9">
+															$800,000
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div> 
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="panel panel-default cl">
+						<div class="panel-heading">HTML</div>
+							<div class="panel-body">
+								<pre>
+									<code>
+&lt;table class=&quot;table table-border-less table-limits table-hidden&quot;&gt;
+	&lt;thead&gt; 
+		&lt;tr&gt; 
+			&lt;th class='no-bg'&gt;Asset&lt;/th&gt; 
+			&lt;th&gt;Owner&lt;/th&gt; 
+			&lt;th&gt;Avail Lending Value&lt;/th&gt; 
+			&lt;th class='no-bg'&gt;&amp;nbsp;&lt;/th&gt; 
+		&lt;/tr&gt; 
+	&lt;/thead&gt; 
+	&lt;tbody&gt; 
+		&lt;tr&gt; 
+			&lt;td&gt; &lt;i class=&quot;fa fa-plus-square accordian-toggle&quot;&gt;&lt;/i&gt; Property &lt;/td&gt; 
+			&lt;td&gt;Srinivas&lt;/td&gt; &lt;td&gt;$600,000&lt;/td&gt; 
+			&lt;td&gt;&lt;span class='fa fa-square-o fa-2x text-green custom-checkbox'&gt;&amp;lt;input type='checkbox'&amp;gt;&amp;lt;/span&gt;&lt;/td&gt; 
+		&lt;/tr&gt; 
+		&lt;tr&gt; 
+			&lt;td class=&quot;hiddenRow&quot; colspan=&quot;4&quot;&gt; 
+				&lt;div class=&quot;accordian-body row-fluid hide&quot;&gt; 
+					&lt;table class=&quot;table table-border-less&quot;&gt; 
+						&lt;tbody&gt; 
+							&lt;tr&gt; 
+								&lt;td class=&quot;text-middle span3&quot;&gt; Asset Type: &lt;/td&gt; 
+								&lt;td class=&quot;span9&quot;&gt; House and single dwelling &lt;/td&gt; 
+							&lt;/tr&gt; 
+							&lt;tr&gt; 
+								&lt;td class=&quot;text-middle span3&quot;&gt; Address: &lt;/td&gt; 
+								&lt;td class=&quot;span9&quot;&gt; House and single dwelling &lt;/td&gt; 
+							&lt;/tr&gt; 
+							&lt;tr&gt; 
+								&lt;td class=&quot;text-middle span3&quot;&gt; 39 Pitt Street &lt;/td&gt; 
+								&lt;td class=&quot;span9&quot;&gt; $800,000 &lt;/td&gt; 
+							&lt;/tr&gt; 
+						&lt;/tbody&gt; 
+					&lt;/table&gt; 
+				&lt;/div&gt; 
+			&lt;/td&gt; 
+		&lt;/tr&gt; 
+	&lt;/tbody&gt; 
+&lt;/table&gt;
+									</code>
+								</pre>			
+							</div>
+						</div>		
+					
+				<div class="top"><a href="#top">^Top</a></div><div class="clear"></div>
+			</div>
+			<div id="forms">
+				<h2 class='mac_heading'>Forms and form elements</h2>
+				<div class="top"><a href="#top">^Top</a></div><div class="clear"></div>
+				<div id="inputs">
+					<h3 class='mac_heading'>Inputs</h3>
+						<p>Standard HTML5 input types are used, as per below. Where HTML5 input types are not supported, the browser will default to an input type of 'text' as a safeguard.
+						<form>
+							<div class="form-group">
+								<label for="inputEmail">Email address</label>
+								<input type="email" class="form-control" id="inputEmail" placeholder="Enter email" />
+							</div>
+							<div class="form-group">
+								<label for="password">Password</label>
+								<input type="password" class="form-control" id="password" placeolholder="Password" />
+							</div>
+							<div class="form-group">
+								<label for="inputFile">File input</label>
+								<input type="file" id="inputFile" />
+								<p class="help-block">Enter help text here</p>
+							</div>
+							<div class="form-group">
+								<label for="numberPh">Phone number</label>
+								<input type="tel" class="form-control" id="numberPh" placeholder="Enter phone number" />
+							</div>
+							<div class="form-group">
+								<label for="numberGen">General Number</label>
+								<input type="number" class="form-control" id="numberGen" placeholder="General numbers only" />
+							</div>
+							<button type="submit" class="btn btn-mac">Submit</button>
+						</form></p>
+						<div class="panel panel-default cl">
+							<div class="panel-heading">HTML</div>
+							<div class="panel-body">
+							<pre><code>
+&lt;form&gt;
+	&lt;div class="form-group"&gt;
+		&lt;label for="inputEmail"&gt;Email address&lt;/label&gt;
+		&lt;input type="email" class="form-control" id="inputEmail" placeholder="Enter email" /&gt;
+	&lt;/div&gt;
+	&lt;div class="form-group"&gt;
+		&lt;label for="password"&gt;Password&lt;/label&gt;
+		&lt;input type="password" class="form-control" id="password" placeolholder="Password" /&gt;
+	&lt;/div&gt;
+	&lt;div class="form-group"&gt;
+		&lt;label for="inputFile"&gt;File input&lt;/label&gt;
+		&lt;input type="file" id="inputFile" /&gt;
+		&lt;p class="help-block"&gt;Enter help text here&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class="form-group"&gt;
+		&lt;label for="numberPh"&gt;Phone number&lt;/label&gt;
+		&lt;input type="tel" class="form-control" id="numberPh" placeholder="Enter phone number" /&gt;
+	&lt;/div&gt;
+	&lt;div class="form-group"&gt;
+		&lt;label for="numberGen"&gt;General Number&lt;/label&gt;
+		&lt;input type="number" class="form-control" id="numberGen" placeholder="General numbers only" /&gt;
+	&lt;/div&gt;
+	&lt;button type="submit" class="btn btn-mac"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+							</code></pre>
+							</div></div>
+							<p>Buttons can be combined with inputs to add functionality.
+								<div class="input-group">
+									<input type="text" class="form-control">
+									<span class="input-group-btn">
+										<button class="btn btn-mac" type="button">Display limits</button>
+									</span>
+								</div>
+							</p>
+							<div class="panel panel-default cl">
+							<div class="panel-heading">HTML</div>
+							<div class="panel-body">
+							<pre><code>
+&lt;div class="input-group"&gt;
+	&lt;input type="text" class="form-control"&gt;
+	&lt;span class="input-group-btn"&gt;
+		&lt;button class="btn btn-mac" type="button"&gt;Add&lt;/button&gt;
+	&lt;/span&gt;
+&lt;/div&gt;
+							</code></pre>
+							</div>
+							</div>
+							<p>Inputs will scale to 100% of the container they are in when using the class 'from-control'. To size inputs, place them in a container div with the appropriate Bootstrap CSS class.</p>
+							<p><form>
+								<div class="row">
+								<div class="col-sm-6">
+									<p><input type="text" class="form-control" placeholder="Smaller input field" /></p>
+								</div>
+								</div>
+								<button class="btn btn-mac" type="submit">Submit</button>
+							</form></p>
+							<div class="panel panel-default cl">
+							<div class="panel-heading">HTML</div>
+							<div class="panel-body">
+							<pre><code>
+&lt;div class="col-sm-6"&gt;
+  &lt;input type="text" class="form-control" placeholder="Smaller input field"&gt;
+&lt;/div&gt;
+							</code></pre>
+							</div>
+							</div>
+							<p>We have defined custom styles on the .form-control class when a field has focus.</p>
+							<p><input type="text" class="form-control" style="border-color:rgba(98,26,75,0.8);box-shadow: 0 0 8px rgba(98,26,75,0.6);"></p>
+							<div class="panel panel-default cl">
+								<div class="panel-heading">CSS</div>
+								<div class="panel-body">
+									<pre><code>.form-conrtol:focus {
+border-color: rgba(98,26,75, 0.8);
+box-shadow: 0 0 8px rgba(98,26,75, 0.6);
+}
+									</code></pre>
+								</div>
+							</div>
+						</div>
+					<div class="top"><a href="#top">^Top</a></div><div class="clear"></div>
+				</div>
+				<div id="buttons">
+					<h3 class='mac_heading'>Buttons</h3>
+					<h4>Buttons Normal</h4>
+					<p><button type="button" class="btn btn-mac">
+						LOLA Button
+					</button>
+												
+					<button type="button" class="btn btn-default">
+						Default Button
+					</button>
+					
+					<button type="button" class="btn btn-mac btn-round">
+						LOLA Round
+					</button></p>
+					<div class="panel panel-default cl">
+						<div class="panel-heading">HTML</div>
+							<div class="panel-body">
+								<pre>
+									<code>
+&lt;button type=&quot;button&quot; class=&quot;btn btn-mac&quot;&gt; LOLA Button &lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default &quot;&gt; LOLA Button &lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-mac btn-rounded&quot;&gt; LOLA Button &lt;/button&gt;
+									</code>
+								</pre>			
+							</div>
+					</div>
+					
+					<h4>Buttons Large</h4>		
+					<p><button type="button" class="btn btn-mac btn-lg">
+						LOLA Button
+					</button>
+											
+					<button type="button" class="btn btn-default btn-lg">
+						Default Button
+					</button>
+					<button type="button" class="btn btn-mac btn-round btn-lg">
+						LOLA Round
+					</button></p>
+					<div class="panel panel-default cl">
+						<div class="panel-heading">HTML</div>
+							<div class="panel-body">
+								<pre>
+									<code>
+&lt;button type=&quot;button&quot; class=&quot;btn btn-mac btn-lg&quot;&gt; LOLA Button &lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-lg &quot;&gt; LOLA Button &lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-mac btn-rounded btn-lg&quot;&gt; LOLA Button &lt;/button&gt;
+									</code>
+								</pre>			
+							</div>
+					</div>
+					<h4>Button group</h4>
+					<p>
+						<div class="btn-group">
+							<button type="button" class="btn btn-default">Left</button>
+							<button type="button" class="btn btn-default">Middle</button>
+							<button type="button" class="btn btn-default">Right</button>
+						</div>
+					</p>
+					<div class="panel panel-default cl">
+						<div class="panel-heading">HTML</div>
+							<div class="panel-body">
+								<pre>
+									<code>
+&lt;div class="btn-group"&gt;
+	&lt;button type="button" class="btn btn-default"&gt;Left&lt;/button&gt;
+	&lt;button type="button" class="btn btn-default"&gt;Middle&lt;/button&gt;
+	&lt;button type="button" class="btn btn-default"&gt;Right&lt;/button&gt;
+&lt;/div&gt;
+									</code>
+								</pre>			
+							</div>
+					</div>
+
+					<div class="top"><a href="#top">^Top</a></div><div class="clear"></div>
+				</div>
+				<div id="radio">
+					<h3 class='mac_heading'>Radio/Check buttons</h3>
+						<p>Radio buttons</p>
+						<input type="radio" id="r1" name="radio1" value="Option1">
+						<label for="r1" class="check">Option 1</label>
+						<input type="radio" id="r2" name="radio1" value="Option2">
+						<label for="r2" class="check">Option 2</label>
+						<input type="radio" id="r3" name="radio1" value="Option3">
+						<label for="r3" class="check">Option 3</label>
+						<p>Check boxes</p>
+						<input type="checkbox" id="c1" name="check1" value="Check 1">
+						<label for="c1" class="check">Check 1</label>
+						<input type="checkbox" id="c2" name="check2" value="Check 2">
+						<label for="c2" class="check">Check 2</label>
+						<input type="checkbox" id="c3" name="check3" value="Check 3">
+						<label for="c3" class="check">Check 3</label>
+						<div class="panel panel-default cl">
+						<div class="panel-heading"><h3>HTML</h3></div>
+							<div class="panel-body">
+								<pre>
+									<code>
+&lt;input type="radio" id="r1" name="radio1" value="Option1"&gt;
+&lt;label for="r1" class="check"&gt;Option 1&lt;/label&gt;
+
+&lt;input type="checkbox" id="c1" name="check1" value="Check 1"&gt;
+&lt;label for="c1" class="check"&gt;Check 1&lt;/label&gt;
+									</code>
+								</pre>			
+							</div>
+					</div>
+					<div class="top"><a href="#top">^Top</a></div><div class="clear"></div>
+				</div>
+				<div id="drop">
+					<h3 class='mac_heading'>Dropdown lists</h3>
+					<h4>Basic dropdown</h4>
+						<div class="dropdown">
+						  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+						    Dropdown
+						    <span class="caret"></span>
+						  </button>
+						  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+						    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+						    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+						    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+						    <li role="presentation" class="divider"></li>
+						    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+						  </ul>
+						</div><p />
+						<div class="panel panel-default cl">
+							<div class="panel-heading"><h3>HTML</h3></div>
+							<div class="panel-body">
+								<pre><code>
+&lt;div class="dropdown"&gt;
+	&lt;button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"&gt;
+		Dropdown
+		&lt;span class="caret"&gt;&lt;/span&gt;
+	&lt;/button&gt;
+	&lt;ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1"&gt;
+   	&lt;li role="presentation"&gt;&lt;a role="menuitem" tabindex="-1" href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+   	&lt;li role="presentation"&gt;&lt;a role="menuitem" tabindex="-1" href="#"&gt;Another action&lt;/a&gt;&lt;/li&gt;
+   	&lt;li role="presentation"&gt;&lt;a role="menuitem" tabindex="-1" href="#"&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+   	&lt;li role="presentation" class="divider"&gt;&lt;/li&gt;
+   	&lt;li role="presentation"&gt;&lt;a role="menuitem" tabindex="-1" href="#"&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+								</code></pre>
+							</div>
+						</div>
+						<h4>Dropdown with headers</h4>
+						<div class="dropdown">
+							<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+							    Dropdown
+							    <span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2">
+							  <li role="presentation" class="dropdown-header">Dropdown header</li>
+							  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+							  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+							  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+							  <li role="presentation" class="divider"></li>
+							  <li role="presentation" class="dropdown-header">Dropdown header</li>
+							  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Seperate link here</a></li>
+							</ul>
+						</div><p />
+						<div class="panel panel-default cl">
+							<div class="panel-heading"><h3>HTML</h3></div>
+							<div class="panel-body">
+								<pre><code>
+&lt;div class="dropdown"&gt;
+	&lt;button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"&gt;
+		Dropdown
+		&lt;span class="caret"&gt;&lt;/span&gt;
+	&lt;/button&gt;
+	&lt;ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2"&gt;
+	  &lt;li role="presentation" class="dropdown-header"&gt;Dropdown header&lt;/li&gt;
+	  &lt;li role="presentation"&gt;&lt;a role="menuitem" tabindex="-1" href="#"&gt;Action&lt;/a&gt;&lt;/li&gt;
+	  &lt;li role="presentation"&gt;&lt;a role="menuitem" tabindex="-1" href="#"&gt;Another action&lt;/a&gt;&lt;/li&gt;
+	  &lt;li role="presentation"&gt;&lt;a role="menuitem" tabindex="-1" href="#"&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+	  &lt;li role="presentation" class="divider"&gt;&lt;/li&gt;
+	  &lt;li role="presentation" class="dropdown-header"&gt;Dropdown header&lt;/li&gt;
+	  &lt;li role="presentation"&gt;&lt;a role="menuitem" tabindex="-1" href="#"&gt;Seperate link here&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+								</code></pre>
+							</div>
+						</div>
+						<h4>Dropdown as select box</h4>
+						<select class="form-control">
+						  <option>1</option>
+						  <option>2</option>
+						  <option>3</option>
+						  <option>4</option>
+						  <option>5</option>
+						</select>
+						<p/>
+					<div class="top"><a href="#top">^Top</a></div><div class="clear"></div>
+				</div>
+				<div id="valid">
+					<h3 class='mac_heading'>Validation messages</h3>
+						<p>Some customisation of Bootstrap default colours have been done for validation error messages.</p>
+						<div class="form-group has-success">
+						  <label class="control-label" for="inputSuccess1">Input with success</label>
+						  <input type="text" class="form-control" id="inputSuccess1">
+						</div>
+						<div class="form-group has-warning">
+						  <label class="control-label" for="inputWarning1">Input with warning</label>
+						  <input type="text" class="form-control" id="inputWarning1">
+						</div>
+						<div class="form-group has-error">
+						  <label class="control-label" for="inputError1">Input with error</label>
+						  <input type="text" class="form-control" id="inputError1">
+						</div>
+						<div class="panel panel-default cl">
+							<div class="panel-heading">HTML</div>
+							<div class="panel-body">
+							<pre><code>
+&lt;div class="form-group has-success"&gt;
+	&lt;label class="control-label" for="inputSuccess1"&gt;Input with success&lt;/label&gt;
+	&lt;input type="text" class="form-control" id="inputSuccess1"&gt;
+&lt;/div&gt;
+&lt;div class="form-group has-warning"&gt;
+	&lt;label class="control-label" for="inputWarning1"&gt;Input with warning&lt;/label&gt;
+	&lt;input type="text" class="form-control" id="inputWarning1"&gt;
+&lt;/div&gt;
+&lt;div class="form-group has-error"&gt;
+	&lt;label class="control-label" for="inputError1"&gt;Input with error&lt;/label&gt;
+	&lt;input type="text" class="form-control" id="inputError1"&gt;
+&lt;/div&gt;
+						</code></pre>
+						</div>
+					</div>
+					<div class="top"><a href="#top">^Top</a></div><div class="clear"></div>
+			</div>
+
+			
+			<div id="panels">
+				<h2 class='mac_heading'>Panels</h2>
+				<div id="defP"></div>
+				<h3 class='mac_heading'>Default Panels</h3>
+				An example of a default panel with heading is shown below.
+				<div class="wrap panel panel-default">
+					<div class="panel-heading">Default Panel Heading</div>
+					<div class="panel-body"><p>Panel body content in here</p></div>
+				</div>
+				<div class="panel panel-default cl">
+					<div class="panel-heading">HTML</div>
+					<div class="panel-body">
+						<pre><code>
+&lt;div class="panel panel-default"&gt;
+	&lt;div class="panel-heading"&gt;
+		Default Panel Heading
+	&lt;/div&gt;
+	&lt;div class="panel-body"&gt;
+		&lt;p&gt;Panel body content in here&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+						</code></pre>
+					</div>
+				</div>
+				<div class="top"><a href="#top">^Top</a></div><div class="clear"></div>
+				<div id="defPanelBtn"></div>
+				<h3 class='mac_heading'>Default panel with button in header</h3>
+				Adds a standard 'primary' button to the panel header, right aligned. Any type of button can be added (primary, default, custom)
+				<div class="wrap panel panel-default">
+					<div class="panel-heading">Default Panel Heading<a href="#" class="btn btn-mac pull-right">Button</a></div>
+					<div class="panel-body"><p>Panel body content in here</p></div>
+				</div>
+				<div class="panel panel-default cl">
+					<div class="panel-heading">HTML</div>
+					<div class="panel-body">
+						<pre><code>
+  &lt;div class="panel panel-default"&gt;
+      &lt;div class="panel-heading"&gt;
+      	Default Panel Heading
+      	&lt;a href="#" class="btn btn-mac pull-right"&gt;Button&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class="panel-body"&gt;
+      	&lt;p&gt;Panel body content in here&lt;/p&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;</code></pre>
+					</div>
+				</div>
+				<div class="top"><a href="#top">^Top</a></div><div class="clear"></div>
+				<div id="defPaneltbl"></div>
+				<h3 class='mac_heading'>Default panel with table</h3>
+				Shows a table within a panel body
+				<div class="wrap panel panel-default">
+					<div class="panel-heading">Default Panel Heading</div>
+					<div class="panel-body">
+						<table class='table table-striped table-hover'> 
+							<thead> 
+								<tr>
+									<th>Heading1</th>
+									<th>Heading2</th>
+								</tr> 
+							</thead> 
+							<tbody> 
+								<tr>
+									<td>data1</td>
+									<td>data1</td> 
+								</tr> 
+								<tr>
+									<td>data2</td>
+									<td>data2</td>
+								</tr>
+								<tr>
+									<td>data3</td>
+									<td>data3</td>
+								</tr>  
+							</tbody> 
+						</table>
+					</div>
+				</div>
+				<div class="panel panel-default cl">
+					<div class="panel-heading">HTML</div>
+					<div class="panel-body">
+						<pre><code>
+&lt;div class="panel panel-default"&gt;
+	&lt;div class="panel-heading"&gt;
+		Default Panel Heading
+	&lt;/div&gt;
+	&lt;div class="panel-body"&gt;
+		&lt;table class='table table-striped table-hover'&gt; 
+			&lt;thead&gt; 
+				&lt;tr&gt;
+					&lt;th&gt;Heading1&lt;/th&gt;
+					&lt;th&gt;Heading2&lt;/th&gt;
+				&lt;/tr&gt; 
+			&lt;/thead&gt; 
+			&lt;tbody&gt; 
+				&lt;tr&gt;
+					&lt;td&gt;data1&lt;/td&gt;
+					&lt;td&gt;data1&lt;/td&gt; 
+				&lt;/tr&gt; 
+				&lt;tr&gt;
+					&lt;td&gt;data2&lt;/td&gt;
+					&lt;td&gt;data2&lt;/td&gt;
+				&lt;/tr&gt;
+				&lt;tr&gt;
+					&lt;td&gt;data3&lt;/td&gt;
+					&lt;td&gt;data3&lt;/td&gt;
+				&lt;/tr&gt;  
+			&lt;/tbody&gt; 
+		&lt;/table&gt;	
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+					</div>
+				</div>
+				<!-- Security panel start -->
+				<div class="top"><a href="#top">^Top</a></div><div class="clear"></div>
+				<div id="defPanelSec"></div>
+				<h3 class='mac_heading'>Default panel with internal secondary panel</h3>
+				Intro text
+				<div class="panel panel-default">
+					<div class="panel-heading">Default Panel Heading</div>
+					<div class="panel-body">
+						<table class="table table-striped table-hidden">
+							<thead>
+								<tr>
+									<th><i class="fa fa-sort pull-left">&nbsp;</i>Asset</th>
+									<th><i class="fa fa-sort pull-left">&nbsp;</i>Owner</th>
+									<th><i class="fa fa-sort pull-left">&nbsp;</i>Avail Lending Value</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><i class="fa fa-plus-square accordian-toggle"></i> Property </td>
+									<td>Srinivas</td> <td>$600,000</td> 
+								</tr>
+								<tr>
+									<td class="hiddenRow"colspan="4">
+										<div class="accordian-body row-fluid hide"> 
+											<div class="panel-secondary">
+												<div class="row-fluid">
+													<h3>Request</h3>
+													<div class="col-sm-3">
+														<span class="title">Pre Approved Limit</span>
+														<span class="big">$50K</span>
+													</div>
+													<div class="col-sm-3">
+														<span class="title">Banker Approval</span>
+														<span class="big">$500K</span>
+													</div>
+													<div class="col-sm-3">
+														<span class="title">Amount</span>
+														<input type="text" class="form-control" name="amount" />
+													</div>
+													<div class="col-sm-3">
+														<span class="title">Purpose</span>
+														<select class="form-control" >
+															<option>Cashflow</option>
+															<option>Other</option>
+														</select>
+													</div>
+													<div class="clear"></div>
+													<div class="spacer1h"></div>
+												</div>
+												<div class="row-fluid panel panel-light">
+													<div class="panel-heading">
+														<div class="col-sm-6 lightHeading">
+														Security
+														</div>
+														<div class="col-sm-6">
+															<div class="col-sm-7">
+																<select class="form-control">
+																	<option>Property - Blacktown NSW</option>
+																	<option>Property - Strathfield NSW</option>
+																</select>
+															</div>
+															<div class="col-sm-4">
+																<button class="btn btn-mac pull-right">Add new security</button>
+															</div>
+															<div class="col-sm-1 pull-right"><span style="width:10px;"></span></div>
+														</div>
+														<div class="clear"></div>
+													</div>
+													<div class="panel-body">
+														<div class="row">
+															<div class="col-sm-4">
+																<span class="title">New Valuation</span>
+																<input type="text" class="form-control" />
+															</div>
+															<div class="col-sm-4">
+																<span class="title">Valuation date</span>
+																<input type="text" class="form-control" />
+															</div>
+															<div class="col-sm-4">
+																<span class="title">Allocated Amount</span>
+																<input text="title" class="form-control" />
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-sm-4">
+																<span class="title">Address</span>
+																<p>10 John St Blacktown NSW</p>
+															</div>
+															<div class="col-sm-4">
+																<span class="title">Type</span>
+																<p>Residential - House</p>
+															</div>
+															<div class="col-sm-4">
+																<span class="title">Sub-type</span>
+																<p>House &amp; single dwellings</p>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-sm-4">
+																<span class="title">LVR</span>
+																<p>80%</p>
+															</div>
+															<div class="col-sm-4">
+																<span class="title">Lending value</span>
+																<p>$1.02M</p>
+															</div>
+															<div class="col-sm-4">
+																<span class="title">Available lending value</span>
+																<p>$50K</p>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-sm-4">
+																<span class="title">Valuation</span>
+																<p>80%</p>
+															</div>
+															<div class="col-sm-4">
+																<span class="title">Valuation date</span>
+																<p>10/11/2012</p>
+															</div>
+															<div class="col-sm-4">
+																<span class="title">Owner</span>
+																<p>Michael Scott<br />
+																Sacha Scott</p>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-sm-8">
+																<table class="table table-striped table-hover">
+																	<thead>
+																		<tr>
+																			<th>Secured against</th>
+																			<th>LLVR Facility</th>
+																			<th>SQI</th>
+																		</tr>
+																	</thead>
+																	<tbody>
+																		<tr>
+																			<td>Business Term Lending - 123456-1234567</td>
+																			<td>80%</td>
+																			<td>FS</td>
+																		</tr>
+																		<tr>
+																			<td>Business Overdraft - 123456-1234567</td>
+																			<td>75%</td>
+																			<td>FS</td>
+																		</tr>
+																		<tr>
+																			<td>Home Loan - 123456-1234567</td>
+																			<td>75%</td>
+																			<td>FS</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+															<div class="col-sm-4">
+																&nbsp;
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-sm-8">
+																<table class="table table-striped table-hover">
+																	<thead>
+																		<tr>
+																			<th>Guarantee</th>
+																			<th>Role</th>
+																		</tr>
+																	</thead>
+																	<tbody>
+																		<tr>
+																			<td>Machael Scott</td>
+																			<td>Director</td>
+																		</tr>
+																		<tr>
+																			<td>Sacha Scott</td>
+																			<td>Director</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</div>
+															<div class="col-sm-2">
+																<button class="btn btn-mac">Edit Guarantees</button>
+															</div>
+														</div>
+													</div>
+												</div>
+										</div> 
+									</td> 
+								</tr> 
+							</tbody> 
+						</table>
+					</div>
+				</div>
+
+				<div class="panel panel-default cl">
+					<div class="panel-heading">HTML</div>
+					<div class="panel-body">
+						<pre><code>
+&lt;div class="panel panel-default"&gt;
+	&lt;div class="panel-heading"&gt;Default Panel Heading&lt;/div&gt;
+	&lt;div class="panel-body"&gt;
+		&lt;table class="table table-striped table-hidden"&gt;
+			&lt;thead&gt;
+				&lt;tr&gt;
+					&lt;th&gt;&lt;i class="fa fa-sort pull-left"&gt;&nbsp;&lt;/i&gt;Asset&lt;/th&gt;
+					&lt;th&gt;&lt;i class="fa fa-sort pull-left"&gt;&nbsp;&lt;/i&gt;Owner&lt;/th&gt;
+					&lt;th&gt;&lt;i class="fa fa-sort pull-left"&gt;&nbsp;&lt;/i&gt;Avail Lending Value&lt;/th&gt;
+				&lt;/tr&gt;
+			&lt;/thead&gt;
+			&lt;tbody&gt;
+				&lt;tr&gt;
+					&lt;td&gt;&lt;i class="fa fa-plus-square accordian-toggle"&gt;&lt;/i&gt; Property &lt;/td&gt;
+					&lt;td&gt;Srinivas&lt;/td&gt; &lt;td&gt;$600,000&lt;/td&gt; 
+				&lt;/tr&gt;
+				&lt;tr&gt;
+					&lt;td class="hiddenRow"colspan="4"&gt;
+						&lt;div class="accordian-body row-fluid hide"&gt; 
+							&lt;div class="panel-secondary"&gt;
+								&lt;div class="row-fluid"&gt;
+									&lt;h3&gt;Request&lt;/h3&gt;
+									&lt;div class="col-sm-3"&gt;
+										&lt;span class="title"&gt;Pre Approved Limit&lt;/span&gt;
+										&lt;span class="big"&gt;$50K&lt;/span&gt;
+									&lt;/div&gt;
+									&lt;div class="col-sm-3"&gt;
+										&lt;span class="title"&gt;Banker Approval&lt;/span&gt;
+										&lt;span class="big"&gt;$500K&lt;/span&gt;
+									&lt;/div&gt;
+									&lt;div class="col-sm-3"&gt;
+										&lt;span class="title"&gt;Amount&lt;/span&gt;
+										&lt;input type="text" class="form-control" name="amount" /&gt;
+									&lt;/div&gt;
+									&lt;div class="col-sm-3"&gt;
+										&lt;span class="title"&gt;Purpose&lt;/span&gt;
+										&lt;select class="form-control" &gt;
+											&lt;option&gt;Cashflow&lt;/option&gt;
+											&lt;option&gt;Other&lt;/option&gt;
+										&lt;/select&gt;
+									&lt;/div&gt;
+									&lt;div class="clear"&gt;&lt;/div&gt;
+									&lt;div class="spacer1h"&gt;&lt;/div&gt;
+								&lt;/div&gt;
+								&lt;div class="row-fluid panel panel-light"&gt;
+									&lt;div class="panel-heading"&gt;
+										&lt;div class="col-sm-7 lightHeading"&gt;
+										Security
+										&lt;/div&gt;
+										&lt;div class="col-sm-5"&gt;
+											&lt;div class="col-sm-7"&gt;
+												&lt;select class="form-control"&gt;
+													&lt;option&gt;Property - Blacktown NSW&lt;/option&gt;
+													&lt;option&gt;Property - Strathfield NSW&lt;/option&gt;
+												&lt;/select&gt;
+											&lt;/div&gt;
+											&lt;div class="col-sm-4 pull-right"&gt;
+												&lt;button class="btn btn-mac pull-right"&gt;Add new security&lt;/button&gt;
+											&lt;/div&gt;
+										&lt;/div&gt;
+										&lt;div class="clear"&gt;&lt;/div&gt;
+									&lt;/div&gt;
+									&lt;div class="panel-body"&gt;
+										&lt;div class="row"&gt;
+											&lt;div class="col-sm-4"&gt;
+												&lt;span class="title"&gt;New Valuation&lt;/span&gt;
+												&lt;input type="text" class="form-control" /&gt;
+											&lt;/div&gt;
+											&lt;div class="col-sm-4"&gt;
+												&lt;span class="title"&gt;Valuation date&lt;/span&gt;
+												&lt;input type="text" class="form-control" /&gt;
+											&lt;/div&gt;
+											&lt;div class="col-sm-4"&gt;
+												&lt;span class="title"&gt;Allocated Amount&lt;/span&gt;
+												&lt;input text="title" class="form-control" /&gt;
+											&lt;/div&gt;
+										&lt;/div&gt;
+										&lt;div class="row"&gt;
+											&lt;div class="col-sm-4"&gt;
+												&lt;span class="title"&gt;Address&lt;/span&gt;
+												&lt;p&gt;10 John St Blacktown NSW&lt;/p&gt;
+											&lt;/div&gt;
+											&lt;div class="col-sm-4"&gt;
+												&lt;span class="title"&gt;Type&lt;/span&gt;
+												&lt;p&gt;Residential - House&lt;/p&gt;
+											&lt;/div&gt;
+											&lt;div class="col-sm-4"&gt;
+												&lt;span class="title"&gt;Sub-type&lt;/span&gt;
+												&lt;p&gt;House &amp; single dwellings&lt;/p&gt;
+											&lt;/div&gt;
+										&lt;/div&gt;
+										&lt;div class="row"&gt;
+											&lt;div class="col-sm-4"&gt;
+												&lt;span class="title"&gt;LVR&lt;/span&gt;
+												&lt;p&gt;80%&lt;/p&gt;
+											&lt;/div&gt;
+											&lt;div class="col-sm-4"&gt;
+												&lt;span class="title"&gt;Lending value&lt;/span&gt;
+												&lt;p&gt;$1.02M&lt;/p&gt;
+											&lt;/div&gt;
+											&lt;div class="col-sm-4"&gt;
+												&lt;span class="title"&gt;Available lending value&lt;/span&gt;
+												&lt;p&gt;$50K&lt;/p&gt;
+											&lt;/div&gt;
+										&lt;/div&gt;
+										&lt;div class="row"&gt;
+											&lt;div class="col-sm-4"&gt;
+												&lt;span class="title"&gt;Valuation&lt;/span&gt;
+												&lt;p&gt;80%&lt;/p&gt;
+											&lt;/div&gt;
+											&lt;div class="col-sm-4"&gt;
+												&lt;span class="title"&gt;Valuation date&lt;/span&gt;
+												&lt;p&gt;10/11/2012&lt;/p&gt;
+											&lt;/div&gt;
+											&lt;div class="col-sm-4"&gt;
+												&lt;span class="title"&gt;Owner&lt;/span&gt;
+												&lt;p&gt;Michael Scott&lt;br /&gt;
+												Sacha Scott&lt;/p&gt;
+											&lt;/div&gt;
+										&lt;/div&gt;
+										&lt;div class="row"&gt;
+											&lt;div class="col-sm-8"&gt;
+												&lt;table class="table table-striped table-hover"&gt;
+													&lt;thead&gt;
+														&lt;tr&gt;
+															&lt;th&gt;Secured against&lt;/th&gt;
+															&lt;th&gt;LLVR Facility&lt;/th&gt;
+															&lt;th&gt;SQI&lt;/th&gt;
+														&lt;/tr&gt;
+													&lt;/thead&gt;
+													&lt;tbody&gt;
+														&lt;tr&gt;
+															&lt;td&gt;Business Term Lending - 123456-1234567&lt;/td&gt;
+															&lt;td&gt;80%&lt;/td&gt;
+															&lt;td&gt;FS&lt;/td&gt;
+														&lt;/tr&gt;
+														&lt;tr&gt;
+															&lt;td&gt;Business Overdraft - 123456-1234567&lt;/td&gt;
+															&lt;td&gt;75%&lt;/td&gt;
+															&lt;td&gt;FS&lt;/td&gt;
+														&lt;/tr&gt;
+														&lt;tr&gt;
+															&lt;td&gt;Home Loan - 123456-1234567&lt;/td&gt;
+															&lt;td&gt;75%&lt;/td&gt;
+															&lt;td&gt;FS&lt;/td&gt;
+														&lt;/tr&gt;
+													&lt;/tbody&gt;
+												&lt;/table&gt;
+											&lt;/div&gt;
+											&lt;div class="col-sm-4"&gt;
+												&nbsp;
+											&lt;/div&gt;
+										&lt;/div&gt;
+										&lt;div class="row"&gt;
+											&lt;div class="col-sm-8"&gt;
+												&lt;table class="table table-striped table-hover"&gt;
+													&lt;thead&gt;
+														&lt;tr&gt;
+															&lt;th&gt;Guarantee&lt;/th&gt;
+															&lt;th&gt;Role&lt;/th&gt;
+														&lt;/tr&gt;
+													&lt;/thead&gt;
+													&lt;tbody&gt;
+														&lt;tr&gt;
+															&lt;td&gt;Machael Scott&lt;/td&gt;
+															&lt;td&gt;Director&lt;/td&gt;
+														&lt;/tr&gt;
+														&lt;tr&gt;
+															&lt;td&gt;Sacha Scott&lt;/td&gt;
+															&lt;td&gt;Director&lt;/td&gt;
+														&lt;/tr&gt;
+													&lt;/tbody&gt;
+												&lt;/table&gt;
+											&lt;/div&gt;
+											&lt;div class="col-sm-2"&gt;
+												&lt;button class="btn btn-mac"&gt;Edit Guarantees&lt;/button&gt;
+											&lt;/div&gt;
+										&lt;/div&gt;
+									&lt;/div&gt;
+								&lt;/div&gt;
+						&lt;/div&gt; 
+					&lt;/td&gt; 
+				&lt;/tr&gt; 
+			&lt;/tbody&gt; 
+		&lt;/table&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+						</code></pre>
+					</div>
+				</div>
+				<div class="top"><a href="#top">^Top</a></div><div class="clear"></div>
+				<div id="noFin"></div>
+				<h3 class="mac_heading">No Financials Panel</h3>
+				<div class="panel panel-default">
+					<div class="panel-heading">No financials required</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-sm-1"></div>
+							<div class="col-sm-10">
+								<table class="table table-striped">
+									<thead>
+										<tr>
+											<th>&nbsp;</th>
+											<th>Current Lending</th>
+											<th>Limit</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Equipment Finance Express</td>
+											<td>&mdash;</td>
+											<td>$500K</td>
+										</tr>
+										<tr>
+											<td>GX Guarantees (Property or cash backed)</td>
+											<td>&mdash;</td>
+											<td>$100K</td>
+										</tr>
+										<tr>
+											<td>GX Guarantees (Cash backed)</td>
+											<td>&mdash;</td>
+											<td>$100K</td>
+										</tr>	
+										<tr>
+											<td>Insurance Premium Funding Non-Cancellable</td>
+											<td>&mdash;</td>
+											<td>$500K</td>
+										</tr>	
+										<tr>
+											<td>Insurance Premium Funding Cancellable</td>
+											<td>&mdash;</td>
+											<td>$100K</td>
+										</tr>				
+									</tbody> 
+								</table>
+							</div>
+							<div class="col-sm-1"></div>
+						</div>
+					</div>
+				</div>
+				<div class="top"><a href="#top">^Top</a></div><div class="clear"></div>
+				<!-- Security panel end -->
+				<div id="approve"></div>
+				<h3 class='mac_heading'>Approved panel</h3>
+				<p>Panel to display when request is approved (including modal window for Edit Conditions)</p>
+				<div class="row-fluid panel panel-approved">
+					<div class="col-sm-1"><h2><i class="fa fa-check green"></i></h2></div>
+					<div class="col-sm-9">
+						<h2>Approved</h2>
+						<h5>You have been approved for:</h5>
+						<li>Business overdraft</li>
+						<h5>Subject to the following conditions:</h5>
+						<li>Valuation</li>
+						<li>ASIC search has been completed and there are no known adverse on any of the Borrowers and Guarantors</li> 
+						<button class="btn btn-mac" data-toggle="modal" data-target="#editConditions">Edit Conditions</button>
+					</div>
+					<div class="col-sm-2"><button class="btn btn-mac pull-right">Submit Request</button></div>
+				</div>
+				<div class="modal fade" id="editConditions" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				  	<div class="modal-dialog">
+					  <div class="modal-content">
+					      <div class="modal-header">
+					        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">x</span><span class="sr-only">Close</span></button>
+					        <h4 class="modal-title" id="myModalLabel">Decision Questions</h4>
+					      </div>
+					      <div class="modal-body">
+					      	<div class="col-sm-1"></div>
+					      	<div class="col-sm-9">
+						      <form>
+						      	<div>
+							      	<label for="sectorPolicy">Which sector policy applies?</label>
+							      	<select name="sectorPolicy" class="form-control">
+							      		<option>None</option>
+							      		<option>Option 1</option>
+							      		<option>Option 2</option>
+							      	</select>
+						      	</div>
+						      	<div class="radio">
+						      		<p>ASIC search has been completed and there are no known adverse on any of the Borrowers, Guarantors including defaults, judgments, bankruptcies, writs/summons?</p>
+						      		<input type="radio" id="asic1" name="asic"><label for="asic1">Yes</label>&nbsp;&nbsp;<input type="radio" id="asic2" name="asic" ><label for="asic2">No</label>
+						      	</div>
+						      	<div class="radio">
+						      		<p>Are current excesses/arrears for the Customer Group greater than $5,000</p>
+						      		<input type="radio" id="excess1" name="excess"><label for="excess1">Yes</label>&nbsp;&nbsp;<input type="radio" id="excess2" name="excess" ><label for="excess2">No</label>
+						      	</div>
+						      	<div class="radio">
+						      		<p>Current property valuation within policy or subject to satisfactory?</p>
+						      		<input type="radio" id="value1" name="value"><label for="value1">Yes</label>&nbsp;&nbsp;<input type="radio" id="value2" name="value" ><label for="value2">No</label>
+						      	</div>
+						      	<div class="radio">
+						      		<p>Request is at 'arms length' i.e. not for benefit of self, family, relatives for friends?</p>
+						      		<input type="radio" id="amrs1" name="amrs"><label for="amrs1">Yes</label>&nbsp;&nbsp;<input type="radio" id="amrs2" name="amrs" ><label for="amrs2">No</label>
+						      	</div>
+						      	<div class="radio">
+						      		<p>Is the borrower trading with a positive net worth and is solvent?</p>
+						      		<input type="radio" id="positive1" name="positive"><label for="positive1">Yes</label>&nbsp;&nbsp;<input type="radio" id="positive2" name="positive" ><label for="positive2">No</label>
+						      	</div>
+						      	<div class="radio">
+						      		<p>Have all previous conditions and covenants been met?</p>
+						      		<input type="radio" id="preCond1" name="preCond"><label for="preCond1">Yes</label>&nbsp;&nbsp;<input type="radio" id="preCond2" name="preCond" ><label for="preCond2">No</label>
+						      	</div>
+						      	<div class="radio">
+						      		<p>Does this request override or modify a Credit decision or directive, including previously declined credit requets?</p>
+						      		<input type="radio" id="override1" name="override"><label for="override1">Yes</label>&nbsp;&nbsp;<input type="radio" id="override2" name="override" ><label for="override2">No</label>
+						      	</div>
+						      	
+						      	</form>
+						   </div>
+						   <div class="col-sm-2"></div>
+						   <div class="clear"></div>
+						   <div class="modal-footer">
+						      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							   <button type="button" class="btn btn-mac">Save changes</button>
+							</div>
+						</div>
+					</div>
+				</div>	
+				</div>
+				<div class="panel panel-default cl">
+					<div class="panel-heading">HMTL</div>
+					<div class="panel-body">
+						<pre><code>
+&lt;div class="row-fluid panel panel-approved"&gt;
+	&lt;div class="col-sm-1"&gt;&lt;h2&gt;&lt;i class="fa fa-check green"&gt;&lt;/i&gt;&lt;/h2&gt;&lt;/div&gt;
+	&lt;div class="col-sm-9"&gt;
+		&lt;h2&gt;Approved&lt;/h2&gt;
+		&lt;h5&gt;You have been approved for:&lt;/h5&gt;
+		&lt;li&gt;Business overdraft&lt;/li&gt;
+		&lt;h5&gt;Subject to the following conditions:&lt;/h5&gt;
+		&lt;li&gt;Valuation&lt;/li&gt;
+		&lt;li&gt;ASIC search has been completed and there are no known adverse on any of the Borrowers and Guarantors&lt;/li&gt; 
+		&lt;button class="btn btn-mac" data-toggle="modal" data-target="#editConditions"&gt;Edit Conditions&lt;/button&gt;
+	&lt;/div&gt;
+	&lt;div class="col-sm-2"&gt;&lt;button class="btn btn-mac pull-right"&gt;Submit Request&lt;/button&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="modal fade" id="editConditions" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"&gt;
+  	&lt;div class="modal-dialog"&gt;
+	  &lt;div class="modal-content"&gt;
+	      &lt;div class="modal-header"&gt;
+	        &lt;button type="button" class="close" data-dismiss="modal"&gt;&lt;span aria-hidden="true"&gt;x&lt;/span&gt;&lt;span class="sr-only"&gt;Close&lt;/span&gt;&lt;/button&gt;
+	        &lt;h4 class="modal-title" id="myModalLabel"&gt;Decision Questions&lt;/h4&gt;
+	      &lt;/div&gt;
+	      &lt;div class="modal-body"&gt;
+	      	&lt;div class="col-sm-1"&gt;&lt;/div&gt;
+			&lt;div class="col-sm-9"&gt;
+		      &lt;form&gt;
+		      	&lt;div&gt;
+			      	&lt;label for="sectorPolicy"&gt;Which sector policy applies?&lt;/label&gt;
+			      	&lt;select name="sectorPolicy" class="form-control"&gt;
+			      		&lt;option&gt;None&lt;/option&gt;
+			      		&lt;option&gt;Option 1&lt;/option&gt;
+			      		&lt;option&gt;Option 2&lt;/option&gt;
+			      	&lt;/select&gt;
+		      	&lt;/div&gt;
+		      	&lt;div class="radio"&gt;
+		      		&lt;p&gt;ASIC search has been completed and there are no known adverse on any of the Borrowers, Guarantors including defaults, judgments, bankruptcies, writs/summons?&lt;/p&gt;
+		      		&lt;input type="radio" id="asic1" name="asic"&gt;&lt;label for="asic1"&gt;Yes&lt;/label&gt;&nbsp;&nbsp;&lt;input type="radio" id="asic2" name="asic" &gt;&lt;label for="asic2"&gt;No&lt;/label&gt;
+		      	&lt;/div&gt;
+		      	&lt;div class="radio"&gt;
+		      		&lt;p&gt;Are current excesses/arrears for the Customer Group greater than $5,000&lt;/p&gt;
+		      		&lt;input type="radio" id="excess1" name="excess"&gt;&lt;label for="excess1"&gt;Yes&lt;/label&gt;&nbsp;&nbsp;&lt;input type="radio" id="excess2" name="excess" &gt;&lt;label for="excess2"&gt;No&lt;/label&gt;
+		      	&lt;/div&gt;
+		      	&lt;div class="radio"&gt;
+		      		&lt;p&gt;Current property valuation within policy or subject to satisfactory?&lt;/p&gt;
+		      		&lt;input type="radio" id="value1" name="value"&gt;&lt;label for="value1"&gt;Yes&lt;/label&gt;&nbsp;&nbsp;&lt;input type="radio" id="value2" name="value" &gt;&lt;label for="value2"&gt;No&lt;/label&gt;
+		      	&lt;/div&gt;
+		      	&lt;div class="radio"&gt;
+		      		&lt;p&gt;Request is at 'arms length' i.e. not for benefit of self, family, relatives for friends?&lt;/p&gt;
+		      		&lt;input type="radio" id="amrs1" name="amrs"&gt;&lt;label for="amrs1"&gt;Yes&lt;/label&gt;&nbsp;&nbsp;&lt;input type="radio" id="amrs2" name="amrs" &gt;&lt;label for="amrs2"&gt;No&lt;/label&gt;
+		      	&lt;/div&gt;
+		      	&lt;div class="radio"&gt;
+		      		&lt;p&gt;Is the borrower trading with a positive net worth and is solvent?&lt;/p&gt;
+		      		&lt;input type="radio" id="positive1" name="positive"&gt;&lt;label for="positive1"&gt;Yes&lt;/label&gt;&nbsp;&nbsp;&lt;input type="radio" id="positive2" name="positive" &gt;&lt;label for="positive2"&gt;No&lt;/label&gt;
+		      	&lt;/div&gt;
+		      	&lt;div class="radio"&gt;
+		      		&lt;p&gt;Have all previous conditions and covenants been met?&lt;/p&gt;
+		      		&lt;input type="radio" id="preCond1" name="preCond"&gt;&lt;label for="preCond1"&gt;Yes&lt;/label&gt;&nbsp;&nbsp;&lt;input type="radio" id="preCond2" name="preCond" &gt;&lt;label for="preCond2"&gt;No&lt;/label&gt;
+		      	&lt;/div&gt;
+		      	&lt;div class="radio"&gt;
+		      		&lt;p&gt;Does this request override or modify a Credit decision or directive, including previously declined credit requets?&lt;/p&gt;
+		      		&lt;input type="radio" id="override1" name="override"&gt;&lt;label for="override1"&gt;Yes&lt;/label&gt;&nbsp;&nbsp;&lt;input type="radio" id="override2" name="override" &gt;&lt;label for="override2"&gt;No&lt;/label&gt;
+		      	&lt;/div&gt;
+		      	
+		      	&lt;/form&gt;
+		   &lt;/div&gt;
+		   &lt;div class="col-sm-2"&gt;&lt;/div&gt;
+		   &lt;div class="clear"&gt;&lt;/div&gt;
+		   &lt;div class="modal-footer"&gt;
+		      &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;Close&lt;/button&gt;
+			   &lt;button type="button" class="btn btn-mac"&gt;Save changes&lt;/button&gt;
+			   &lt;div class="clear"&gt;&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class="clear"&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;	
+						</code></pre>
+					</div>
+				</div>
+				<div class="top"><a href="#top">^Top</a></div><div class="clear"></div>
+				<div id="incomp"></div>
+				<h3 class='mac_heading'>Incomplete panel</h3>
+				<p>Panel to display when request requires further work to approve</p>
+				<div class="row-fluid panel panel-incomplete">
+					<div class="col-sm-1"><h2><span class="orange">$</h2></div>
+					<div class="col-sm-9">
+						<h2>Complete Financials</h2>
+						<h5>You will need to complete financials in order to decision the following requests:</h5>
+						<li>Bank Overdraft - Increase $50K</li> 
+					</div>
+					<div class="col-sm-2"><button class="btn btn-mac pull-right">Proceed to Financials</button></div>
+				</div>
+				<div class="panel panel-default cl">
+					<div class="panel-heading">HMTL</div>
+					<div class="panel-body">
+						<pre><code>
+&lt;div class="row-fluid panel panel-incomplete"&gt;
+	&lt;div class="col-sm-1"&gt;&lt;h2&gt;&lt;span class="orange"&gt;$&lt;/h2&gt;&lt;/div&gt;
+	&lt;div class="col-sm-9"&gt;
+		&lt;h2&gt;Complete Financials&lt;/h2&gt;
+		&lt;h5&gt;You will need to complete financials in order to decision the following requests:&lt;/h5&gt;
+		&lt;li&gt;Bank Overdraft - Increase $50K&lt;/li&gt; 
+	&lt;/div&gt;
+	&lt;div class="col-sm-2"&gt;&lt;button class="btn btn-mac pull-right"&gt;Proceed to Financials&lt;/button&gt;&lt;/div&gt;
+&lt;/div&gt;
+						</code></pre>
+					</div>
+				</div>
+				<div class="top"><a href="#top">^Top</a></div><div class="clear"></div>
+				<div id="custG"></div>
+				<h3 class="mac_heading">Customer Group panel</h3>
+				<p></p>
+				<div class="panel panel-default">
+					<div class="panel-heading">Customer Group</div>
+					<div class="panel-body">
+						<div class="row-fluid">
+							<div class="col-sm-6">
+								<table class="table table-striped">
+									<thead>
+										<tr>
+											<th>Customer</th>
+											<th>ID</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Michael Scott</td>
+											<td>1234567891011</td>
+										</tr>
+										<tr>
+											<td>Sacha Scott</td>
+											<td>5678910111213</td>
+										</tr>
+										<tr>
+											<td>Scott Construction Pty Ltd</td>
+											<td>7891011121314</td>
+										</tr>				
+									</tbody> 
+								</table>
+							</div>
+							<div class="col-sm-1"></div>
+							<div class="col-sm-2">
+								<div class="row-fluid-lr">
+									<span class="title">In good standing?</span>
+									<span class="big">Yes</span>
+								</div>
+							</div>
+							<div class="col-sm-2">
+								<div class="row-fluid-lr">
+									<span class="title">Owner</span>
+									<span class="big">John Banker</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="top"><a href="#top">^Top</a></div><div class="clear"></div>
+				<div id="limits"></div>
+				<h3 class='mac_heading'>Limits panel</h3>
+				<p>Panel to display approval limits</p>
+				<div class="panel panel-default">
+					<div class="panel-heading">Summary</div>
+					<div class="panel-body">
+						<div class="row-fluid limits-body">
+							<div class="col-sm-6">
+								<h4>Approval limits - no financials (pre-approved)</h4>
+								<div class="row-fluid">
+									<table class="table limitsTable">
+										<tr>
+											<td>
+												<h4>$200K</h4>
+												<p>Term Lending</p>
+											</td>
+											<td>
+												<h4>$100K</h4>
+												<p>Equipment Finance</p>
+											</td>
+											<td>
+												<h4>$75K</h4>
+												<p>Business Overdraft</p>
+											</td>
+											<td>
+												<h4>$30K</h4>
+												<p>Unsecured</p>
+											</td>
+											<td>
+												<h4>-</h4>
+												<p>Home Lending</p>
+											</td>
+										</tr>
+									</table>
+								</div>
+								
+								<div class="row-fluid">
+									<h4>Product limits - no financials</h4>
+									<table class="table limitsTable ltFull">
+										<tr>
+											<td>
+												<h4>$500K</h4>
+												<p>Equipment Finance</p>
+											</td>
+											<td>
+												<h4>$100K</h4>
+												<p>GX Property or Cash backed</p>
+											</td>
+											<td>
+												<h4>$100K</h4>
+												<p>GX<br />Cash backed</p>
+											</td>
+											<td>
+												<h4>$500K</h4>
+												<p>IPF non-cancellable</p>
+											</td>
+											<td>
+												<h4>$100K</h4>
+												<p>IPF cancellable</p>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+							<div class="col-sm-6 limit-chart" style="border-left:1px solid #ccc;">
+								<h4>Current Position</h4>
+								<h5>Secured Lending</h5>
+								<div id="limit-fin-chart" style="height:278px;"></div>
+							</div>
+						</div>
+						<div class="row-fluid limits-body">
+							<div class="col-sm-6">
+								<div class="row-fluid">
+									<h4>Approval limits - with financials (Your CAL)</h4>
+									<table class="table limitsTable">
+										<tr>
+											<td>
+												<h4>$500K</h4>
+												<p>Term Lending</p>
+											</td>
+											<td>
+												<h4>$500K</h4>
+												<p>Equipment Finance</p>
+											</td>
+											<td>
+												<h4>$500K</h4>
+												<p>Business Overdraft</p>
+											</td>
+											<td>
+												<h4>$30K</h4>
+												<p>Unsecured</p>
+											</td>
+											<td>
+												<h4>$750K</h4>
+												<p>Home Lending</p>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+							<div class="col-sm-6"  style="border-left:1px solid #ccc;">
+								<div class="row-fluid">
+									<h4>Available Equity</h4>
+									<table class="table limitsTable ltFull">
+										<tr>
+											<td>
+												<h4>$100K</h4>
+												<p>Residential<br />property</p>
+											</td>
+											<td>
+												<h4>$100K</h4>
+												<p>Commercial<br />property</p>
+											</td>
+											<td>
+												<h4>-</h4>
+												<p>Other</p>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+						
+				<div class="panel panel-default cl">
+					<div class="panel-heading">JavaScript</div>
+					<div class="panel-body">
+						<pre><code>
+&lt;script type="text/javascript" src="https://www.google.com/jsapi"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+	google.load("visualization", "1", {packages:["corechart"]});
+	google.setOnLoadCallback(drawChart);
+	function drawChart() {
+		var data = google.visualization.arrayToDataTable([
+		['Type', 'Amount'],
+		['$800K - Home Lending', 800],
+		['$170K - Business Lending', 170],
+		['$65K - Equipment Finance', 65]
+		]);
+
+		var options = {
+		slices: {
+		0: { color: 'DimGray' },
+		1: { color: 'Gray' },
+		2: { color: 'LightSlateGray'},
+		3: { color: 'Silver'},
+		4: { color: 'SlateGray'}
+		},
+		pieStartAngle: 120,
+		pieSliceText: 'none'
+		};
+
+		var chart = new google.visualization.PieChart(document.getElementById('limit-fin-chart'));
+
+		chart.draw(data, options);
+	}
+&lt;/script&gt;
+						</code></pre>
+						</div>
+					</div>
+				<div class="panel panel-default cl">
+					<div class="panel-heading">HMTL</div>
+					<div class="panel-body">
+						<pre><code>
+&lt;div class="panel panel-default"&gt;
+	&lt;div class="panel-heading"&gt;Summary&lt;/div&gt;
+	&lt;div class="panel-body"&gt;
+		&lt;div class="row-fluid limits-body"&gt;
+			&lt;div class="col-sm-6"&gt;
+				&lt;h4&gt;Approval limits - no financials (pre-approved)&lt;/h4&gt;
+				&lt;div class="row-fluid"&gt;
+					&lt;table class="table limitsTable"&gt;
+						&lt;tr&gt;
+							&lt;td&gt;
+								&lt;h4&gt;$200K&lt;/h4&gt;
+								&lt;p&gt;Term Lending&lt;/p&gt;
+							&lt;/td&gt;
+							&lt;td&gt;
+								&lt;h4&gt;$100K&lt;/h4&gt;
+								&lt;p&gt;Equipment Finance&lt;/p&gt;
+							&lt;/td&gt;
+							&lt;td&gt;
+								&lt;h4&gt;$75K&lt;/h4&gt;
+								&lt;p&gt;Business Overdraft&lt;/p&gt;
+							&lt;/td&gt;
+							&lt;td&gt;
+								&lt;h4&gt;$30K&lt;/h4&gt;
+								&lt;p&gt;Unsecured&lt;/p&gt;
+							&lt;/td&gt;
+							&lt;td&gt;
+								&lt;h4&gt;-&lt;/h4&gt;
+								&lt;p&gt;Home Lending&lt;/p&gt;
+							&lt;/td&gt;
+						&lt;/tr&gt;
+					&lt;/table&gt;
+				&lt;/div&gt;
+				
+				&lt;div class="row-fluid"&gt;
+					&lt;h4&gt;Product limits - no financials&lt;/h4&gt;
+					&lt;table class="table limitsTable ltFull"&gt;
+						&lt;tr&gt;
+							&lt;td&gt;
+								&lt;h4&gt;$500K&lt;/h4&gt;
+								&lt;p&gt;Equipment Finance&lt;/p&gt;
+							&lt;/td&gt;
+							&lt;td&gt;
+								&lt;h4&gt;$100K&lt;/h4&gt;
+								&lt;p&gt;GX Property or Cash backed&lt;/p&gt;
+							&lt;/td&gt;
+							&lt;td&gt;
+								&lt;h4&gt;$100K&lt;/h4&gt;
+								&lt;p&gt;GX&lt;br /&gt;Cash backed&lt;/p&gt;
+							&lt;/td&gt;
+							&lt;td&gt;
+								&lt;h4&gt;$500K&lt;/h4&gt;
+								&lt;p&gt;IPF non-cancellable&lt;/p&gt;
+							&lt;/td&gt;
+							&lt;td&gt;
+								&lt;h4&gt;$100K&lt;/h4&gt;
+								&lt;p&gt;IPF cancellable&lt;/p&gt;
+							&lt;/td&gt;
+						&lt;/tr&gt;
+					&lt;/table&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class="col-sm-6 limit-chart" style="border-left:1px solid #ccc;"&gt;
+				&lt;h4&gt;Current Position&lt;/h4&gt;
+				&lt;h5&gt;Secured Lending&lt;/h5&gt;
+				&lt;div id="limit-fin-chart" style="height:278px;"&gt;&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="row-fluid limits-body"&gt;
+			&lt;div class="col-sm-6"&gt;
+				&lt;div class="row-fluid"&gt;
+					&lt;h4&gt;Approval limits - with financials (Your CAL)&lt;/h4&gt;
+					&lt;table class="table limitsTable"&gt;
+						&lt;tr&gt;
+							&lt;td&gt;
+								&lt;h4&gt;$500K&lt;/h4&gt;
+								&lt;p&gt;Term Lending&lt;/p&gt;
+							&lt;/td&gt;
+							&lt;td&gt;
+								&lt;h4&gt;$500K&lt;/h4&gt;
+								&lt;p&gt;Equipment Finance&lt;/p&gt;
+							&lt;/td&gt;
+							&lt;td&gt;
+								&lt;h4&gt;$500K&lt;/h4&gt;
+								&lt;p&gt;Business Overdraft&lt;/p&gt;
+							&lt;/td&gt;
+							&lt;td&gt;
+								&lt;h4&gt;$30K&lt;/h4&gt;
+								&lt;p&gt;Unsecured&lt;/p&gt;
+							&lt;/td&gt;
+							&lt;td&gt;
+								&lt;h4&gt;$750K&lt;/h4&gt;
+								&lt;p&gt;Home Lending&lt;/p&gt;
+							&lt;/td&gt;
+						&lt;/tr&gt;
+					&lt;/table&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class="col-sm-6"  style="border-left:1px solid #ccc;"&gt;
+				&lt;div class="row-fluid"&gt;
+					&lt;h4&gt;Available Equity&lt;/h4&gt;
+					&lt;table class="table limitsTable ltFull"&gt;
+						&lt;tr&gt;
+							&lt;td&gt;
+								&lt;h4&gt;$100K&lt;/h4&gt;
+								&lt;p&gt;Residential&lt;br /&gt;property&lt;/p&gt;
+							&lt;/td&gt;
+							&lt;td&gt;
+								&lt;h4&gt;$100K&lt;/h4&gt;
+								&lt;p&gt;Commercial&lt;br /&gt;property&lt;/p&gt;
+							&lt;/td&gt;
+							&lt;td&gt;
+								&lt;h4&gt;-&lt;/h4&gt;
+								&lt;p&gt;Other&lt;/p&gt;
+							&lt;/td&gt;
+						&lt;/tr&gt;
+					&lt;/table&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+						</code></pre>
+					</div>
+				<div class="top"><a href="#top">^Top</a></div><div class="clear"></div>
+			</div>
+			<div id="msg">
+				<h2 class='mac_heading'>Global warnings and messages</h2>
+					<div class="alert alert-success" role="alert"><strong>Passed!</strong> You have entered all information correctly. Well done!</div>
+					<div class="alert alert-info" role="alert"><strong>Hang on!</strong> Read this alert, but it's not going to stop you submitting the form.</div>
+					<div class="alert alert-warning" role="alert"><strong>Warning!</strong> A few things to check here, so just be careful.</div>
+					<div class="alert alert-danger" role="alert"><strong>No way!</strong> You can't proceed until you fix up these errors!</div>
+
+					<div class="panel panel-default cl">
+						<div class="panel-heading">HTML</div>
+						<div class="panel-body">
+							<pre><code>
+&lt;div class="alert alert-success" role="alert"&gt;&lt;strong&gt;Passed!&lt;/strong&gt; You have entered all information correctly. Well done!&lt;/div&gt;
+&lt;div class="alert alert-info" role="alert"&gt;&lt;strong&gt;Hang on!&lt;/strong&gt; Read this alert, but it's not going to stop you submitting the form.&lt;/div&gt;
+&lt;div class="alert alert-warning" role="alert"&gt;&lt;strong&gt;Warning!&lt;/strong&gt; A few things to check here, so just be careful.&lt;/div&gt;
+&lt;div class="alert alert-danger" role="alert"&gt;&lt;strong&gt;No way!&lt;/strong&gt; You can't proceed until you fix up these errors!&lt;/div&gt;
+							</code></pre>
+						</div>
+					</div>
+				<div class="top"><a href="#top">^Top</a></div><div class="clear"></div>
+			</div>
+			<div id="modal">
+				<h2 class='mac_heading'>Modal windows</h2>
+					<h3>Basic modal window</h3>
+					<!-- Button trigger modal -->
+					<button class="btn btn-mac btn-lg" data-toggle="modal" data-target="#myModal">
+					  Launch demo modal
+					</button>
+
+					<!-- Modal -->
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					  <div class="modal-dialog">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+					      </div>
+					      <div class="modal-body">
+					        Modal body text goes in here. Any standard HTML can be used.
+					      </div>
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					        <button type="button" class="btn btn-mac">Save changes</button>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+					<p />
+					<div class="panel panel-default cl">
+						<div class="panel-heading">HTML</div>
+						<div class="panel-body">
+							<pre><code>
+&lt;button class="btn btn-mac btn-lg" data-toggle="modal" data-target="#myModal"&gt;
+  Launch demo modal
+&lt;/button&gt;
+
+&lt;div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"&gt;
+  &lt;div class="modal-dialog"&gt;
+	  &lt;div class="modal-content"&gt;
+	      &lt;div class="modal-header"&gt;
+	        &lt;button type="button" class="close" data-dismiss="modal"&gt;&lt;span aria-hidden="true"&gt;&times;&lt;/span&gt;&lt;span class="sr-only"&gt;Close&lt;/span&gt;&lt;/button&gt;
+	        &lt;h4 class="modal-title" id="myModalLabel"&gt;Modal title&lt;/h4&gt;
+	      &lt;/div&gt;
+	      &lt;div class="modal-body"&gt;
+		      Modal body text goes in here. Any standard HTML can be used.
+		   &lt;/div&gt;
+		   &lt;div class="modal-footer"&gt;
+		      &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;Close&lt;/button&gt;
+			   &lt;button type="button" class="btn btn-mac"&gt;Save changes&lt;/button&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;	
+							</code></pre>
+						</div>
+					</div>
+				<h3>Increase request modal window</h3>
+				<button class="btn btn-mac btn-lg" data-toggle="modal" data-target="#increaseRequest">
+					  Launch increase request window
+					</button>
+
+					<!-- Modal -->
+					<div class="modal fade" id="increaseRequest" tabindex="-1" role="dialog" aria-labelledby="Increase request" aria-hidden="true">
+					  <div class="modal-dialog">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					        <h4 class="modal-title" id="myModalLabel">Increase request</h4>
+					      </div>
+					      <div class="modal-body">
+					        	<div class="col-sm-6">
+					        		<h3>Pre-approved limit</h3>
+					        		<p>$500K</p>
+					        	</div>
+					        	<div class="col-sm-6">
+					        		<h3>Banker approval</h3>
+					        		<p>$600K</p>
+					        	</div>
+
+					        	<form>
+					        		<div class="col-sm-4">
+					        			<label for="amount">Amount</label>
+					        			<input type="text" id="amount" class="form-control"/>
+					        		</div>
+					        		<div class="col-sm-6">
+					        			<label for="purpose">Purpose</label>
+					        			<select id="purpose" class="form-control">
+						        			<option>Cashflow</option>
+						        			<option>Equipment finance</option>
+						        			<option>Other...</option>
+					        			</select>
+					        		</div>
+					        		<div class="col-sm-2">
+					        			<p style="height:1.1em;">&nbsp;</p>
+					        			<button class="btn btn-mac" type="submit">OK</button>
+					        		</div>
+					        	</form>
+					        	<div class="clear"></div>
+					      </div>
+					      <div class="modal-footer">
+					      	<p></p>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+					<p></p>
+					<div class="panel panel-default cl">
+						<div class="panel-heading">HTML</div>
+						<div class="panel-body">
+							<pre><code>
+&lt;button class="btn btn-mac btn-lg" data-toggle="modal" data-target="#increaseRequest"&gt;
+  Launch increase request window
+&lt;/button&gt;
+
+&lt;!-- Modal --&gt;
+&lt;div class="modal fade" id="increaseRequest" tabindex="-1" role="dialog" aria-labelledby="Increase request" aria-hidden="true"&gt;
+  &lt;div class="modal-dialog"&gt;
+    &lt;div class="modal-content"&gt;
+    	&lt;div class="modal-header"&gt;
+        	&lt;button type="button" class="close" data-dismiss="modal"&gt;&lt;span aria-hidden="true"&gt;&times;&lt;/span&gt;&lt;span class="sr-only"&gt;Close&lt;/span&gt;&lt;/button&gt;
+        	&lt;h4 class="modal-title" id="myModalLabel"&gt;Increase request&lt;/h4&gt;
+      	&lt;/div&gt;
+      	&lt;div class="modal-body"&gt;
+        	&lt;div class="col-sm-6"&gt;
+        		&lt;h3&gt;Pre-approved limit&lt;/h3&gt;
+        		&lt;p&gt;$500K&lt;/p&gt;
+        	&lt;/div&gt;
+        	&lt;div class="col-sm-6"&gt;
+        		&lt;h3&gt;Banker approval&lt;/h3&gt;
+        		&lt;p&gt;$600K&lt;/p&gt;
+        	&lt;/div&gt;
+	        	&lt;form&gt;
+        		&lt;div class="col-sm-4"&gt;
+        			&lt;label for="amount"&gt;Amount&lt;/label&gt;
+        			&lt;input type="text" id="amount" class="form-control"/&gt;
+        		&lt;/div&gt;
+        		&lt;div class="col-sm-6"&gt;
+        			&lt;label for="purpose"&gt;Purpose&lt;/label&gt;
+        			&lt;select id="purpose" class="form-control"&gt;
+	        			&lt;option&gt;Cashflow&lt;/option&gt;
+	        			&lt;option&gt;Equipment finance&lt;/option&gt;
+	        			&lt;option&gt;Other...&lt;/option&gt;
+	       			&lt;/select&gt;
+	       		&lt;/div&gt;
+	       		&lt;div class="col-sm-2"&gt;
+	       			&lt;p style="height:1.1em;"&gt;&nbsp;&lt;/p&gt;
+	       			&lt;button class="btn btn-mac" type="submit"&gt;OK&lt;/button&gt;
+	       		&lt;/div&gt;
+	       	&lt;/form&gt;
+	       	&lt;div class="clear"&gt;&lt;/div&gt;
+	    &lt;/div&gt;
+	    &lt;div class="modal-footer"&gt;
+	    	&lt;p&gt;&lt;/p&gt;
+	    &lt;/div&gt;
+	&lt;/div&gt;
+  &lt;/div&gt;	
+&lt;/div&gt;
+					</code></pre>
+						</div>
+					</div>
+				<div class="top"><a href="#top">^Top</a></div><div class="clear"></div>
+			</div>
+			<div id="charts">
+				<h2 class='mac_heading'>Charts</h2>
+				<p>Charts are drawn using the Google Charts API found <a href="https://developers.google.com/chart/" target="_blank">here</a></p>
+				<p>The API library must be included in the header of any HTML page that requires a chart to be drawn and the library can only be accessed via Google - we cannot download and host the API locally.</p>
+				<div class="panel panel-default cl">
+					<div class="panel-heading">HTML</div>
+					<div class="panel-body"><pre><code>&lt;script src="https://www.google.com/jsapi"&gt;&lt;/script&gt;</code></pre></div>
+				</div>
+				<p>An example output of a chart is shown below. The chart is drawn using simple JavaScript. Full documentation of available customisations can be found at the <a href="https://google-developers.appspot.com/chart/interactive/docs/gallery/piechart">Google Developers site</a></p>
+				<h4>Example chart</h4>
+				    <script type="text/javascript">
+				      google.load("visualization", "1", {packages:["corechart"]});
+				      google.setOnLoadCallback(drawChart);
+				      function drawChart() {
+
+				        var data = google.visualization.arrayToDataTable([
+				          ['Task', 'Hours per Day'],
+				          ['Work',     11],
+				          ['Eat',      2],
+				          ['Commute',  2],
+				          ['Watch TV', 2],
+				          ['Sleep',    7]
+				        ]);
+
+				        var options = {
+				          title: 'My Daily Activities'
+				        };
+
+				        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+				        chart.draw(data, options);
+				      }
+				    </script>
+				<div id="piechart" style="width: 900px; height: 500px;"></div>
+				<div style="clear:both;"></div>
+				<div class="panel panel-default cl">
+					<div class="panel-heading">HTML</div>
+					<div class="panel-body">
+						<h4>JavaScript</h4>
+						<pre><code>
+&lt;script type="text/javascript"&gt;
+  google.load("visualization", "1", {packages:["corechart"]});
+  google.setOnLoadCallback(drawChart);
+  function drawChart() {
+
+    var data = google.visualization.arrayToDataTable([
+      ['Task', 'Hours per Day'],
+      ['Work',     11],
+      ['Eat',      2],
+      ['Commute',  2],
+      ['Watch TV', 2],
+      ['Sleep',    7]
+    ]);
+
+    var options = {
+      title: 'My Daily Activities'
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('piechart')); //ID name should be intuative -												//the ID name given here is an eample
+
+    chart.draw(data, options);
+  }
+&lt;/script&gt;
+				</code></pre>
+				<h4>HTML</h4>
+				<pre><code>
+&lt;div id="piechart" style="width: 900px; height: 500px;"&gt;&lt;/div&gt; &lt;!-- Change div ID to suit --&gt;
+				</code></pre>
+				</div>
+				</div>
+				<div class="top"><a href="#top">^Top</a></div><div class="clear"></div>
+			</div>
+			<div id="other">
+				<h2 class='mac_heading'>Other Components</h2>
+
+				<div class="top"><a href="#top">^Top</a></div><div class="clear"></div>
+			</div>
+		</div>
+		</div>
+	</div>
+	</div>
+	</div>
+	</body>
+</html>

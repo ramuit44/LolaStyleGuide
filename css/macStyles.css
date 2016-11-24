@@ -1,0 +1,1286 @@
+/* --- GLOBAL STYLES --- */
+/* - Fonts - */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Regular'), local('Roboto-Regular'), url(../fonts/google.woff) format('woff');
+}
+
+/* - Standard elements - */
+body {
+	font-family:"Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0.625em 0;
+	color:#621A4B;
+}
+
+a {
+	color: #DC241F;
+}
+
+a:hover {
+	color:#DC241F;
+	text-decoration: underline;
+}
+
+canvas {
+	color:#621A4B;
+}
+
+i {
+	color:#999;
+}
+
+/* - Page containers - */
+.container {
+	width:970px;
+	margin:0 auto;
+	padding:0;
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+	padding:2px;
+}
+
+.container .row-fluid {
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+.row-fluid {
+    width: 100%;
+}
+.row-fluid:before, .row-fluid:after {
+    content: "";
+    display: table;
+    line-height: 0;
+}
+.row-fluid:after {
+    clear: both;
+}
+
+.row-fluid-lr {
+	margin:1em;
+}
+
+/* - Page header - */
+.pageHeader {
+	height:4em;
+	background-color: #f8f8f8;
+	margin-top:-10px;
+}
+
+.pageHeader h3 {
+	font-weight:normal;
+	color: #666;
+	display: inline-block;
+}
+
+.pageHeader small {
+	padding-left:20px;
+}
+
+.pageHeader .btn-info {
+	font-size:50%;
+	margin-left:20px;
+	border:1px solid #767676;
+	color:#fff;
+	background-color: #767676;
+	border-radius: 5px;
+	padding:2px 5px;
+	cursor: default;
+	display:inline-block;
+}
+
+.top {
+	float:right;
+}
+
+.clear {
+	clear:both;
+}
+
+label.check {
+	font-weight:normal;
+}
+
+.spacer1h {
+	height:1em;
+	display:block;
+}
+
+.accordian-body {
+	margin-left:0em;
+}
+
+h3 small {
+	color: #727272;
+}
+
+.right {
+	text-align: right;
+}
+
+.btn-new, .btn-new:hover, .btn-new:active, .btn-new:focus {
+	background-color:rgba(45,55,62, 0.8);
+	border-color:rgba(45,55,62, 1.0);
+	color:#fff;
+	font-size:75%;
+	padding: 2px 5px;
+	cursor: default;
+}
+
+/* --- TOOL TIPS ---*/
+
+a.headIcon {	
+	color:#621A4B;
+	text-decoration: none;
+}
+
+
+/* --- PARAGRAPH STYLES --- */
+.title {
+	padding-bottom:0;
+	margin-bottom:0;
+	font-size:14px;
+	font-weight:bold;
+	display: block;
+}
+
+.big {
+	font-size:20px;
+	font-weight: bold;
+	display: block;
+	padding:4px 0px;
+}
+
+/* --- PAGINATION --- */
+.pagination > li > a, .pagination > li > span {
+	color:#621A4B;
+	border-color: #999;
+}
+
+.pagination > li > a:hover {
+	color:#621A4B;
+	background-color: rgba(98,26,75, 0.3);
+	text-decoration: none;
+	border-color: #999;
+}
+
+.pagination > li > a:focus, .pagination > li > a:active {
+	color:#fff;
+	background-color: rgba(98,26,75, 0.8);
+	text-decoration: none;
+}
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+	background-color: rgba(98,26,75, 0.8);
+	border-color: rgba(98,26,75, 1);
+}
+
+/* --- CHARTS --- */
+.canvasjs-chart-credit {
+	display:none;
+}
+.sub-sub-item {
+	text-indent:2em;
+}
+
+/* --- MODAL WINDOWS --- */
+.modal-body input[type="radio"] {
+	float:left;
+	margin-left:-20px;
+	position:absolute;
+	width:0;
+	height:0;
+	opacity: 0;
+}
+
+.modal-body .radio label:first-of-type {
+	margin-left:2em;
+}
+
+.modal-body .radio label {
+	background-image: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0D%0A%3C%21--%20Generator%3A%20Adobe%20Illustrator%2017.1.0%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200%29%20%20--%3E%0D%0A%3C%21DOCTYPE%20svg%20PUBLIC%20%22-//W3C//DTD%20SVG%201.0//EN%22%20%22http%3A//www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd%22%3E%0D%0A%3Csvg%20version%3D%221.0%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2232px%22%0D%0A%09%20height%3D%2232px%22%20viewBox%3D%220%200%2032%2032%22%20enable-background%3D%22new%200%200%2032%2032%22%20xml%3Aspace%3D%22preserve%22%3E%0D%0A%3Cg%20id%3D%22Layer_1%22%3E%0D%0A%09%3Cg%3E%0D%0A%09%09%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M16%2C31.5c-8.5%2C0-15.5-7-15.5-15.5S7.5%2C0.5%2C16%2C0.5s15.5%2C7%2C15.5%2C15.5S24.5%2C31.5%2C16%2C31.5z%22/%3E%0D%0A%09%09%3Cpath%20fill%3D%22%23621A4B%22%20d%3D%22M16%2C1c8.3%2C0%2C15%2C6.7%2C15%2C15s-6.7%2C15-15%2C15S1%2C24.3%2C1%2C16S7.7%2C1%2C16%2C1%20M16%2C0C7.2%2C0%2C0%2C7.2%2C0%2C16s7.2%2C16%2C16%2C16%0D%0A%09%09%09c8.8%2C0%2C16-7.2%2C16-16S24.8%2C0%2C16%2C0L16%2C0z%22/%3E%0D%0A%09%3C/g%3E%0D%0A%3C/g%3E%0D%0A%3Cg%20id%3D%22Layer_2%22%3E%0D%0A%3C/g%3E%0D%0A%3C/svg%3E%0D%0A');
+	background-repeat: no-repeat;
+	background-size: 1em 1em;
+	display:inline-block;
+	background-position: 0 0.25em;
+}
+
+.radio input[type="radio"]:checked + label {
+	background-image: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0D%0A%3C%21--%20Generator%3A%20Adobe%20Illustrator%2017.1.0%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200%29%20%20--%3E%0D%0A%3C%21DOCTYPE%20svg%20PUBLIC%20%22-//W3C//DTD%20SVG%201.0//EN%22%20%22http%3A//www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd%22%3E%0D%0A%3Csvg%20version%3D%221.0%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2232px%22%0D%0A%09%20height%3D%2232px%22%20viewBox%3D%220%200%2032%2032%22%20enable-background%3D%22new%200%200%2032%2032%22%20xml%3Aspace%3D%22preserve%22%3E%0D%0A%3Cg%20id%3D%22Layer_1%22%3E%0D%0A%09%3Cg%3E%0D%0A%09%09%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M16%2C31.5c-8.5%2C0-15.5-7-15.5-15.5S7.5%2C0.5%2C16%2C0.5s15.5%2C7%2C15.5%2C15.5S24.5%2C31.5%2C16%2C31.5z%22/%3E%0D%0A%09%09%3Cpath%20fill%3D%22%23621A4B%22%20d%3D%22M16%2C1c8.3%2C0%2C15%2C6.7%2C15%2C15s-6.7%2C15-15%2C15S1%2C24.3%2C1%2C16S7.7%2C1%2C16%2C1%20M16%2C0C7.2%2C0%2C0%2C7.2%2C0%2C16s7.2%2C16%2C16%2C16%0D%0A%09%09%09c8.8%2C0%2C16-7.2%2C16-16S24.8%2C0%2C16%2C0L16%2C0z%22/%3E%0D%0A%09%3C/g%3E%0D%0A%09%3Ccircle%20fill%3D%22%23621A4B%22%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%228%22/%3E%0D%0A%3C/g%3E%0D%0A%3Cg%20id%3D%22Layer_2%22%3E%0D%0A%3C/g%3E%0D%0A%3C/svg%3E%0D%0A');
+	background-repeat: no-repeat;
+	background-size: 1em;
+	background-position: 0 0.25em;
+}
+
+.modal-body select {
+	margin-bottom:1em;
+}
+
+.modal-body div.radio {
+	font-weight: bold;
+	margin-bottom: 2em;
+}
+
+/* --- FORMS --- */
+.form-control:focus {
+	border-color: rgba(98,26,75, 0.8);
+	box-shadow: 0 0 8px rgba(98,26,75, 0.6);
+}
+
+.has-error {
+	color:#DC241F;
+}
+
+.has-error .form-control {
+	border-color:#DC241F;
+}
+
+.modal-body .col-sm-6 input, .modal-body .col-sm-6 select {
+	width:95%;
+}
+
+.modal .fa {
+	font-size: 170%;
+}
+
+/* --- PANELS --- */
+.panel h3 {
+	border:0;
+	margin:0;
+}
+
+.panelInner {
+	width:100%;
+	margin:0;
+	margin-left:-2em;
+	margin-top:-10px;
+	padding:10px;
+	border-radius: 5px;
+	border:1px solid #ccc;
+}
+
+.panelInner>.panel-light>.panel-heading {
+	margin:0 -10px;
+}
+
+.panelInner>.panel-light>.panel-heading>.row-fluid {
+	margin:0;
+}
+
+.panel-default>.panel-heading, .panel-heading {
+	background-color: #621A4B;
+	color:#fff;
+	font-size:140%;
+}
+
+.panel-secondary {
+	border-radius:5px;
+	border:1px solid #ccc;
+	margin:1em;
+	padding:1em;
+	width:900px;
+}
+
+.panel-secondary>.panel-body {
+	padding:0;
+}
+
+.panel-light>.panel-heading {
+	background-color: rgba(98,26,75,0.3);
+	color:#000;
+	border-radius: 0;
+	margin:0 -15px;
+}
+
+.panel-light>.panel-heading>.lightHeading {
+	padding-top: 0.3em;
+}
+.panel-light>.panel-body>.row {
+	margin:1em 0;
+}
+
+.panel .list-group:last-child .list-group-item:last-child {
+	border-bottom:1px solid #ccc;
+	border-radius:0;
+}
+
+.panel-heading .btn {
+	margin-top:-2px;
+}
+
+.panel-light>.panel-heading .btn {
+	margin-top:0px;
+}
+
+.panel-mac {
+  border-color: #ddd;
+}
+
+.panel-mac > .panel-heading {
+  color: #fff;
+  background-color: #621A4B;
+  border-color: #ddd;
+}
+
+.panel-mac > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #ddd;
+}
+
+.panel-mac > .panel-heading .badge {
+  color: #f5f5f5;
+  background-color: #333;
+}
+
+.panel-mac > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #ddd;
+}
+
+.panel-approved {
+	background-color: #F8F8F8;
+	border-color: #ddd;
+	color:#3c673d;
+	padding-bottom:1em;
+}
+
+.panel-approved li {
+	list-style-position: inside;
+}
+
+.panel-incomplete {
+	background-color: #F8F8F8;
+	border-color: #ddd;
+	color:#FF6600;
+	padding-bottom:1em;
+}
+
+.panel-incomplete .orange {
+	color:#FF6600;
+}
+
+.panel-approved .green {
+	color:#3c673d;
+}
+
+.panel-approved .col-sm-1, .panel-incomplete .col-sm-1 {
+	padding-left:1em;
+}
+
+.panel-approved .col-sm-2, .panel-incomplete .col-sm-2 {
+	padding-right:1em;
+}
+.panel-approved h1, .panel-approved h2, .panel-approved h3, .panel-approved h4, .panel-approved h5, .panel-approved h6 {
+	font-weight: bold;
+	color:#3c673d;
+}
+
+.panel-incomplete h1, .panel-incomplete h2, .panel-incomplete h3, .panel-incomplete h4, .panel-incomplete h5, .panel-incomplete h6 {
+	font-weight: bold;
+	color:#FF6600;
+}
+
+.panel-approved .btn, .panel-incomplete .btn {
+	margin-top:1.1em;
+}
+
+.panel-approved li:hover, .panel-incomplete li:hover {
+	background-color:inherit;
+}
+
+.limits-body h4 {
+	font-weight: bold;
+	color: #621A4B;
+}
+
+.limits h4 {
+	color: #621A4B;
+	border:0;
+	font-size:125%;
+	text-align: center;
+	padding-bottom:0.5em;
+	margin:0.625em;
+}
+
+.limitsTable table, .limitsTable p, .limitsTable h4 {
+	width:99%;
+	color:#621A4B;
+	text-align: center;
+}
+
+.limitsTable>tbody>tr>td {
+	border-top:0;
+	background-color: rgba(98,26,75,0.15);
+	font-size:12px;
+}
+
+.limitsTable td {
+	width:20%;
+}
+
+.limits-body .col-sm-6 .row-fluid:last-child, .limits-body .col-sm-6 .row-fluid:last-child table {
+	margin-bottom:0;
+}
+
+.limitsTable td:nth-child(5) {
+	border-left: 3px solid #fff;
+}
+
+.limitsTable.ltFull td:nth-child(5) {
+	border-left:none;
+}
+
+.limits p {
+	color: #621A4B;
+	text-align: center;
+}
+
+.limits {
+	background-color: #eee;
+	height:110px;
+	width:87px;
+	margin-right:11px;
+	margin-left:11px;
+	padding-left:3px;
+	padding-right:3px;
+}
+
+.limits:first-child {
+	margin-left:0;
+	margin-right:14px;
+}
+
+.limits:nth-child(4n) {
+	margin-right:0;
+	width:90px;
+	margin-left:14px;
+}
+
+.limit-chart {
+	height:auto;
+}
+
+.limit-chart h5 {
+	font-weight: bold;
+	color:#621A4B;
+}
+
+.limit-chart .canvasjs-chart-container {
+	margin-left:-20px;
+}
+
+.secure h3, .secure h4, .secure h5 {
+	color:#621A4B;
+}
+
+.row-fluid .limits-body {
+	margin-bottom:0em;
+	margin-top:0;
+}
+
+.limits-body .col-sm-6 {
+	padding:0px 10px;
+}
+
+.limits-body:nth-of-type(2n)>.col-sm-6 {
+	margin-bottom:10px;
+	padding-top:10px;
+}
+
+.row-fluid.limits-body {
+	margin-bottom:0;
+	margin-top:0;
+}
+
+/* --- TABLES --- */
+.table > thead > tr > th {
+	border-bottom:1px solid rgba(98,26,75,0.6);
+	background-color:#fff;
+	color:#000;
+	font-weight:bold;
+	text-transform: uppercase;
+}
+
+.table-hidden > tbody > tr:nth-child(4n-1) > td, .table-hidden > tbody > tr:nth-child(4n-1) > th {
+	background-color:#fff;
+}
+
+
+.accordian-body>table {
+	background:#F3F2F1 !important;
+	margin-bottom:0px !important;
+}
+
+.accordian-body>table>tbody>tr>td {
+	border:none;
+}
+
+.accordian-body.row-fluid {
+	margin-left:2em;
+}
+
+.table-limits>tbody>tr>td{
+	border:none;
+}
+.table-limits>thead>tr>th.no-bg{
+	background:none;
+}
+
+.table-limits>tbody>tr>td.heading-row{
+	padding-top:20px;
+}
+
+.table-limits>tbody>tr.data-row{
+	background:#F3F2F1;
+}
+
+.table-border-less>thead>tr>th{
+	background:none;
+	color:#000;
+	font-weight:bold;
+}
+
+.table-border-less>tbody>tr>td{
+	border: none;
+}
+
+.table-nest>thead>tr>th {
+	background-color: transparent;
+	border-bottom:1px solid #aaa;
+}
+
+.table-parent td {
+	border-top:none;
+	padding:0;
+
+}
+
+.table-faux-head {
+	border:0;
+	border-bottom:1px solid #999;
+	font-weight:bold;
+	background-color: #fff!important;
+}
+
+.table-products td:last-of-type {
+	width:26.5%;
+}
+
+/* Table Action -- Table with action butons */
+.table-action{
+	border:none;
+}
+
+.table-action tbody tr:last-child td{
+	border-bottom:solid 1px #ddd;
+}
+
+.table-action thead tr th:last-child,.table-action tbody tr td:last-child{
+	border:none;
+	border-left:solid 1px #ddd;
+	background:none;
+}
+
+.table-border-less td{
+	border: none;
+}
+
+/* Table Sortable -- Table with sortable coloumns */
+.dataTables_info{
+	float:left;
+}
+
+.dataTables_paginate{
+	float:right;
+}
+
+.dataTables_length,.dataTables_filter{
+	display:none;
+}
+
+.pagination{
+	margin:0px;
+}
+
+/* --- BUTTONS --- */
+.btn-mac{
+	border-color:#DC241F;
+	background-color: rgba(220,36,31, 100);
+   color: #fff;
+}
+
+.btn-mac:hover{
+	border-color:#DC241F;
+	background-color: rgba(220,36,31, 0.72);
+   color: #fff;
+}
+
+.btn-mac:active, .btn-mac:focus {
+	color:#fff;
+	background-color: rgba(220,36,31, 0.72);
+}
+
+.panel-heading .btn-mac {
+	margin-left:1em;
+}
+
+.btn-round{
+	border-radius:20px;
+}
+
+.btn-group .btn {
+	background-color: rgba(98,26,75,0.05);
+	color:#000;
+	border-color:rgb(98,26,75);
+}
+
+.btn-group .btn.btn-default:first-child {
+	
+}
+
+.btn-group .btn:hover {
+	background-color: rgba(98,26,75,0.2);
+	color:#000;
+}
+
+.btn-group .btn:active, .btn-group .btn:focus, .btn-group .btn.active {
+	background-color: rgba(98,26,75,0.7);
+	color:#fff;
+}
+
+.btn-group .btn.disabled {
+	background-color: rgba(98,26,75,0.3);
+	color:#fff;
+}
+
+/* Nav buttons */
+.btn-link.active, .btn-link.active:hover {
+	background-color:#621A4B;
+	border-radius:20px;
+	color:#fff;
+	text-decoration: none;
+	border:0;
+}
+
+.btn-link {
+	color: #666;
+}
+
+.btn-link:hover {
+	color:#DC241F;
+	text-decoration: none;
+}
+
+/* ---NAVBAR --- */
+.navbar-inverse{
+	border-top:solid 10px #DC241F;
+}
+
+.navbar-inner{
+	padding-bottom:5px;
+}
+
+.navbar-inner i {
+	color:#fff;
+	font-size:150%;
+	margin:3px 7px 0;
+}
+
+.navbar-inner .col-sm-3 {
+	margin-top: 5px;
+	text-align:right;
+	padding-right:5px;
+}
+
+button.navbar, button.navbar:hover, button.navbar:active {
+	padding-top:3px;
+	height:1em;
+	border:0;
+	background-color: transparent;
+	color:#fff;
+	padding:0;
+	min-height: 2em;
+	margin:0;
+	right:0;
+}
+
+.open>.dropdown-toggle.btn-default.navbar {
+ 	border:0;
+	background-color: transparent;
+	color:#fff;
+}
+
+ a.btn.btn-link:active {
+	background-color: #621A4B;
+	border-radius: 20px;
+	color:#fff;
+}
+
+/* --- LOGO --- */
+.logo{
+	background-image:url(../img/logo.png);
+	background-repeat:no-repeat;
+	background-position:left center;
+	padding-left:60px;
+	color:#fff;
+	font-weight: normal;
+}
+
+/* --- ICONS --- */
+.tbl-icon {
+	background-color: #ccc;
+	color:#fff;
+	border-radius:2px;
+	width:16px;
+	height:17px;
+	padding:3px;
+	font-size:11px;
+	top:0;
+}
+
+/* --- MODAL WINDOWS --- */
+.modal h3, .modal h4 {
+	color:#621A4B;
+}
+
+/* Srini */
+.custom-checkbox input[type="checkbox"]{
+	opacity:0;
+}
+
+.hiddenRow{
+	padding:0px !important;
+	height:0px;
+}
+
+/* Colors */
+.text-green{
+	color:rgba(0,153,0, 100);
+}
+
+.text-green:hover{
+	color:rgba(0,153,0, 130);
+}
+
+/* Nav Pills */
+.mac-nav li a:hover,.mac-nav li{
+	background:none;
+}
+.mac-nav li.active a {
+	background-color: #621A4B;
+	border-radius:20px;
+}
+
+.div_border{
+	border:solid 1px #ddd;
+}
+.limits-body {
+	margin:0;
+}
+
+/* --- ST GEORGE STYLES --- */
+
+@font-face {
+	font-family: "StGeorgeBold";
+	src: url('../fonts/stgeorge-bold-webfont.woff') format('woff'),
+		 url('../fonts/stgeorge-bold-webfont.eot') format('embedded-opentype'),
+		 url('../fonts/stgeorge-bold-webfont.ttf') format('truetype'),
+		 url('../fonts/stgeorge-bold-webfont.svg') format('svg');
+}
+
+.stg .panelInner {
+	margin-top:0;
+}
+
+.stg h1, .stg h2, .stg h3, .stg h4,  .stg h5, .stg h6 {
+	font-family:StGeorgeBold;
+	color: #004833;
+}
+
+.stg .pageHeader h3 {
+	font-family: "Helvetica Neue", "Roboto", Helvetica, Arial, sans-serif;
+}
+.stg .mac_heading {
+	font-family:"StGeorgeBold";
+	color: #004833;
+}
+
+.stg .cl .panel-heading {
+	color:#004833;
+	background-color: rgba(120,190,32,0.2);
+}
+
+.stg .panel-light>.panel-heading {
+	background-color: rgba(120,190,32,0.3);
+}
+
+.stg pre {
+	background-color: rgba(120,190,32,0.2);
+}
+
+.stg .red {
+	color:#E30000;
+}
+
+.stg .navbar-inverse {
+	border-top-color:#E30000;
+	background-color:#fff;
+	border-bottom:1px solid #000;
+	height:5em;
+}
+
+.stg .btn-link.active {
+	background-color: #004833;
+}
+
+.stg a.btn.btn-link:active {
+	background-color: #004833;
+	border-radius: 20px;
+	color:#fff;
+}
+.stg .btn-mac {
+	border-color: #E30000;
+	background-color: rgba(227,0,0,1.0)
+}
+
+.stg .btn-mac:hover {
+	background-color: rgba(227,0,0,0.7);
+}
+
+.stg div:not(.has-error) .form-control:focus {
+	border-color: rgba(120, 190,32, 1);
+	box-shadow: 0 0 8px rgba(120, 190, 32, 0.8);
+}
+
+.stg .panel-heading {
+	background-color:#004833;
+}
+
+.stg .container .row-fluid {
+	margin-top:0;
+}
+
+.stg .navbar-inner .col-sm-2 {
+	margin-top:1.4em;
+}
+.stg .logo {
+	color:#004833;
+	background: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0D%0A%3C%21--%20Generator%3A%20Adobe%20Illustrator%2017.1.0%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200%29%20%20--%3E%0D%0A%3C%21DOCTYPE%20svg%20PUBLIC%20%22-//W3C//DTD%20SVG%201.0//EN%22%20%22http%3A//www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd%22%3E%0D%0A%3Csvg%20version%3D%221.0%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2254px%22%0D%0A%09%20height%3D%2238px%22%20viewBox%3D%220%200%2054%2038%22%20enable-background%3D%22new%200%200%2054%2038%22%20xml%3Aspace%3D%22preserve%22%3E%0D%0A%3Cg%20id%3D%22Layer_1%22%3E%0D%0A%09%3Cg%3E%0D%0A%09%09%3Cg%3E%0D%0A%09%09%09%3Cpath%20fill%3D%22%23004833%22%20d%3D%22M5.4%2C15.8c0.8%2C0.5%2C1.7%2C1.1%2C2.4%2C1.8c0.8%2C0.8%2C1.9%2C2.8%2C0.5%2C4.4c-0.5%2C0.6-1.4%2C0.9-2.2%2C0.9%0D%0A%09%09%09%09c-1.2%2C0.1-2.8-0.4-3.7-1.1c0.2%2C0%2C3%2C0.5%2C4.3-0.1c0.4-0.2%2C0.9-0.8%2C0.6-2c-0.4-1.5-1.8-2.7-4.2-4.2c-0.3-0.2-0.5-0.5-0.6-0.9%0D%0A%09%09%09%09C2.5%2C14.6%2C3.9%2C15%2C5.4%2C15.8%22/%3E%0D%0A%09%09%09%3Cpath%20fill%3D%22%23004833%22%20d%3D%22M6.9%2C25.2c0.5%2C0.9%2C0.6%2C1.3%2C0.5%2C2.5c-0.1%2C0.7-0.6%2C1.1-1%2C1.4c0%2C0%2C0.4-1.5-0.2-2.6c-0.9-1.8-1.7-1.7-5.3-3.1%0D%0A%09%09%09%09C0.5%2C23.2%2C0%2C22.6%2C0%2C22.5c0-0.1%2C2.9%2C0.4%2C4.5%2C0.9C5.3%2C23.6%2C6.4%2C24.4%2C6.9%2C25.2%22/%3E%0D%0A%09%09%09%3Cpath%20fill%3D%22%23FFCD00%22%20d%3D%22M30%2C29.3c1.4%2C2.2%2C3.8%2C3.8%2C6.3%2C4.1c4.4%2C0.6%2C8.5-1.6%2C12.9%2C0.1c2%2C0.7%2C3.8%2C2%2C4.8%2C3.7c-0.9-0.4-1.5-0.7-2.6-1%0D%0A%09%09%09%09c-1.9-0.6-3.5-0.4-5.5-0.1c-3.7%2C0.5-7.4%2C1.7-10.9%2C0C32.3%2C34.8%2C30.7%2C32.1%2C30%2C29.3%22/%3E%0D%0A%09%09%09%3Cpath%20fill%3D%22%2378BE20%22%20d%3D%22M25.3%2C12.3c0.3%2C1.2%2C0%2C2.3-0.2%2C3.7c-0.2%2C1.2%2C0.2%2C2.4%2C1.3%2C2.7c0.9%2C0.3%2C3%2C0.2%2C4.4%2C1.5%0D%0A%09%09%09%09c0.4%2C0.4%2C0.6%2C0.5%2C0.7%2C1.2c0.1%2C0.4%2C0%2C0.9-0.1%2C1.2c-0.4%2C1.1-0.7%2C2-1.4%2C2.8c-1%2C1.1-2%2C2.1-3.3%2C2.6c-2.5%2C0.8-3.9-1.6-5.8-2.7%0D%0A%09%09%09%09c-0.9-0.5-1.8-0.8-2.6%2C0.1c-1.3%2C1.2-1.1%2C3.2-0.4%2C4.6c1.3%2C2.6%2C4.1%2C4.9%2C6%2C6.8c-3.4%2C0.9-6.9%2C1.8-10.3%2C0.8c-1.6-0.5-3.1-2.5-3.8-4%0D%0A%09%09%09%09C8.6%2C31%2C7.8%2C25%2C1.8%2C20.7c3%2C0.4%2C4.2%2C0.7%2C6.1-0.6c0.4-0.3%2C0.6-0.8%2C0.5-1.3c-0.3-2-2-3.1-3.1-4.5c0.8%2C0.3%2C1.6%2C0.5%2C2.5%2C0.6%0D%0A%09%09%09%09c1.3%2C0.2%2C2.4-0.1%2C3.5-0.8c3.5-2.1-0.5-6.9-0.5-6.9s3.7%2C2.7%2C6%2C2.3c0.8-0.2%2C1.3-0.4%2C1.7-1.1c1-1.7%2C1.9-3.5%2C2.7-5.3%0D%0A%09%09%09%09c-0.1%2C1.7-0.4%2C3.4%2C0.1%2C5c0.4%2C1.5%2C1.7%2C1.8%2C2.9%2C2.6C24.7%2C11%2C25.1%2C11.3%2C25.3%2C12.3%22/%3E%0D%0A%09%09%09%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M18.9%2C14.4c-0.6%2C0.8-0.4%2C2.1%2C0.6%2C2.2c0.6%2C0%2C1.4-0.3%2C1.6-1c0.2-0.7-0.1-1.2-0.6-1.7%0D%0A%09%09%09%09C20.1%2C13.6%2C19.3%2C13.9%2C18.9%2C14.4%22/%3E%0D%0A%09%09%09%3Cpath%20fill%3D%22%23004833%22%20d%3D%22M8%2C16.3c0.8%2C0.8%2C2%2C0.9%2C2.9%2C0.3c1-0.7%2C1-2.4%2C0.7-3.4c-0.6-2.7-2.1-5.1-4.1-6.3c1%2C2.1%2C2.2%2C4.4%2C2.6%2C6.7%0D%0A%09%09%09%09c0.1%2C0.5%2C0.2%2C1.1%2C0%2C1.6c-0.5%2C1-2.4%2C0.4-3.3-0.1C7.2%2C15.5%2C8%2C16.3%2C8%2C16.3%22/%3E%0D%0A%09%09%09%3Cpath%20fill%3D%22%23004833%22%20d%3D%22M14.3%2C9.7C16%2C9.5%2C16%2C7.9%2C16.3%2C6.6c0.2-1.1%2C0.7-2.2%2C1.5-3.2c0.6-0.7%2C0.9-1%2C1.4-1.6C20.3%2C0.4%2C21.1%2C0%2C21.1%2C0%0D%0A%09%09%09%09s-2.5%2C3.9-3%2C5.9c-0.5%2C1.7%2C0.1%2C3.8-1.8%2C4.9c-1.6%2C0.9-3.2%2C0.1-4.4-0.8c-0.6-0.5-1-1.1-1.2-1.9C11.8%2C8.8%2C12.8%2C9.9%2C14.3%2C9.7%22/%3E%0D%0A%09%09%09%3Cpath%20fill%3D%22%23004833%22%20d%3D%22M20.9%2C9.2c0.7%2C0.8%2C1.6%2C1%2C2.5%2C1.6c0.8%2C0.6%2C1.3%2C1.1%2C1.6%2C2c0.4%2C1.3-0.2%2C2.6-0.2%2C4C25%2C19%2C26.5%2C19%2C28.5%2C19%0D%0A%09%09%09%09c1.2%2C0%2C3.3%2C1%2C3.1%2C2.8c-0.1%2C0.7-0.2%2C1.2-0.7%2C1.7c-0.5%2C0.4-1.1%2C0.6-1.6%2C0.2c1-0.3%2C1.3-0.7%2C1.4-1.7c0-0.6-0.3-1.1-0.5-1.3%0D%0A%09%09%09%09c-0.4-0.4-1-0.9-2.4-0.8c-1.1%2C0-2%2C0.1-3.1-0.7c-0.5-0.4-0.7-0.7-1-1.3c-0.7-1.4%2C0.2-3%2C0-4.5c-0.1-0.7-0.9-1.5-1.5-2%0D%0A%09%09%09%09c-1.1-0.7-2.2-1.1-2.9-2.3c-1-1.8-0.1-4%2C1-5.8C20.3%2C5.4%2C19.4%2C7.6%2C20.9%2C9.2%22/%3E%0D%0A%09%09%09%3Cpath%20fill%3D%22%23004833%22%20d%3D%22M21.6%2C16.1c0.6-0.8%2C0.3-1.8-0.6-2.2c-0.5-0.2-1.1-0.3-1.7-0.1c-0.2%2C0-0.6%2C0.1-0.8%2C0.5%0D%0A%09%09%09%09c0.2-0.1%2C0.6-0.2%2C0.9-0.2c0.5%2C0%2C0.6%2C0.2%2C0.6%2C0.2s-0.7%2C0.2-0.8%2C0.7c-0.2%2C0.5%2C0%2C1%2C0.4%2C1.2C20.2%2C16.8%2C21.1%2C16.7%2C21.6%2C16.1%22/%3E%0D%0A%09%09%09%3Cpath%20fill%3D%22%23004833%22%20d%3D%22M12.4%2C15.7c0.7-1%2C1.4-1.9%2C2.2-2.6c-0.1%2C0.8-0.5%2C1.6-0.8%2C2.4c-1.8%2C3.9-3.4%2C6.5-4%2C11.7%0D%0A%09%09%09%09c-0.6%2C4.9%2C0.6%2C7.4%2C1.3%2C8.5c0.3%2C0.4%2C0.1%2C1.2-0.3%2C1.7C10.3%2C38%2C9%2C37.2%2C9%2C37.2S8.8%2C36.6%2C8.6%2C36c-0.5-1.6-0.7-3.3-0.8-5%0D%0A%09%09%09%09C7.5%2C25.6%2C9.1%2C20.3%2C12.4%2C15.7%22/%3E%0D%0A%09%09%09%3Cpath%20fill%3D%22%23004833%22%20d%3D%22M24.2%2C22.8c1.8%2C1.4%2C3.7%2C2.1%2C5.6%2C2.9c-0.2%2C0.7-0.4%2C0.8-1%2C1.3c-1.3-0.4-2.7-1-3.7-1.9%0D%0A%09%09%09%09C23.9%2C24%2C23%2C23%2C22.5%2C21.4C23.2%2C21.8%2C23.6%2C22.4%2C24.2%2C22.8%22/%3E%0D%0A%09%09%09%3Cpath%20fill%3D%22%23004833%22%20d%3D%22M20.1%2C24.1c1.9%2C0.3%2C2.6%2C1.5%2C3.9%2C2.7c1%2C0.9%2C2.2%2C1.6%2C3.6%2C1.2c-0.2%2C1.1-1.6%2C1.4-2.8%2C1.2%0D%0A%09%09%09%09c-2-0.3-2.4-1.9-3.7-3.2c-0.9-0.9-2.5-0.8-3.5%2C0.4c-1.3%2C1.6%2C0%2C4.3%2C1%2C5.5c1.1%2C1.3%2C2.1%2C2.3%2C3.2%2C3.4c0%2C0%2C1.5%2C1.5%2C2.4%2C2.6%0D%0A%09%09%09%09c-3.1-1.6-5.2-3-7.4-5.7c-1-1.3-1.2-2.4-1.3-3.8c0-1.2%2C0.2-2.2%2C1-3.2C17.5%2C24.1%2C18.7%2C23.9%2C20.1%2C24.1%22/%3E%0D%0A%09%09%09%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M28.4%2C21.7c-0.4%2C0.1-0.7%2C0.6-0.6%2C0.9c0.2%2C0.4%2C0.7%2C0.5%2C1.1%2C0.2c0.1-0.1%2C0.3-0.3%2C0.3-0.5%0D%0A%09%09%09%09c0-0.3-0.2-0.6-0.6-0.7C28.5%2C21.6%2C28.4%2C21.7%2C28.4%2C21.7%22/%3E%0D%0A%09%09%09%3Cpath%20fill%3D%22%23004833%22%20d%3D%22M28.7%2C21.3c0.2%2C0%2C0.5%2C0.1%2C0.6%2C0.3c0.3%2C0.2%2C0.2%2C0.7-0.1%2C0.9c-0.4%2C0.3-0.8%2C0.3-1.1%2C0c-0.2-0.3-0.2-0.7%2C0-1%0D%0A%09%09%09%09C28.3%2C21.4%2C28.5%2C21.3%2C28.7%2C21.3%22/%3E%0D%0A%09%09%3C/g%3E%0D%0A%09%3C/g%3E%0D%0A%3C/g%3E%0D%0A%3Cg%20id%3D%22Layer_2%22%3E%0D%0A%3C/g%3E%0D%0A%3C/svg%3E%0D%0A');
+	height:40px;
+	padding-left:2.2em;
+	padding-top:0.5em;
+	background-repeat: no-repeat;
+	background-position: 0 -0.25em;
+} 
+
+.stg .limits {
+	background-color: rgba(120,190,32,0.2);
+}
+
+.stg .limits h4, .stg .limits p {
+	color: #004833;
+}
+
+.stg .limits-body h4 {
+	color: #004833;
+}
+
+.stg .list-group .glyphicon {
+	color: #004833;
+}
+
+.stg ul a {
+	color: #004833;
+}
+
+.stg ul li:hover {
+	background-color: rgba(120,190,32,0.2);
+}
+
+.stg .panel-incomplete h1, .stg .panel-incomplete h2, .stg .panel-incomplete h3, .stg .panel-incomplete h4, .stg .panel-incomplete h5, .stg .panel-incomplete h6 {
+	font-weight: bold;
+	color:#FF6600;
+}
+
+.stg .table > thead > tr > th {
+	border-bottom:1px solid rgba(0,72,51,0.6);
+}
+
+.stg .navbar-inner i {
+	color:#000;
+}
+
+.stg .pageHeader {
+	margin-top:0;
+	height:4em;
+	margin-bottom:1em;
+}
+
+.stg button.navbar {
+	color:#000;
+}
+
+.stg .open>.dropdown-toggle.btn-default.navbar {
+	color:#000;
+}
+
+.stg .btn-group .btn:hover {
+	background-color: rgba(0,72,51,0.2);
+}
+
+.stg .btn-group .btn:active {
+	background-color: rgba(0,72,51,1);
+	color:#fff;
+}
+
+.stg .panel-approved h1, .stg .panel-approved h2, .stg .panel-approved h3, .stg .panel-approved h4, .stg .panel-approved h5, .stg .panel-approved h6 {
+	font-weight: bold;
+	color:#3c673d;
+}
+
+.stg .limitsTable p {
+	color: #3c673d;
+	text-align: center;
+}
+
+.stg .limitsTable h4 {
+	font-family: "Helvetica Neue", "Roboto", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+}
+
+.stg .limitsTable>tbody>tr>td {
+	background-color: rgba(0,72,51,0.2);
+}
+
+.stg .limit-chart h5 {
+	font-family: "Helvetica Neue", "Roboto", Helvetica, Arial, sans-serif;
+}
+
+.stg .btn-group .btn {
+	background-color: rgba(0,72,51,0.05);
+	color:#000;
+	border-color: rgba(0,72,51,1);
+}
+.stg .btn-group .btn:hover {
+	background-color: rgba(0,72,51,0.5);
+	color:#000;
+}
+
+.stg .btn-group .btn:active {
+	background-color: rgba(0,72,51,0.7);
+	color:#fff;
+}
+
+.stg .btn-group .btn.disabled {
+	background-color: rgba(0,72,51,0.3);
+	color:#fff;	
+}
+
+.stg .navbar-inner .col-sm-3 {
+	margin-top: 20px;
+	text-align: right;
+	padding-right: 5px;
+}
+
+.stg .modal-body .radio label {
+	background-image: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0D%0A%3C%21--%20Generator%3A%20Adobe%20Illustrator%2016.2.1%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200%29%20%20--%3E%0D%0A%3C%21DOCTYPE%20svg%20PUBLIC%20%22-//W3C//DTD%20SVG%201.1//EN%22%20%22http%3A//www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd%22%3E%0D%0A%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2232px%22%0D%0A%09%20height%3D%2232px%22%20viewBox%3D%220%200%2032%2032%22%20enable-background%3D%22new%200%200%2032%2032%22%20xml%3Aspace%3D%22preserve%22%3E%0D%0A%3Cg%20id%3D%22Layer_1%22%3E%0D%0A%09%3Cg%3E%0D%0A%09%09%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M16%2C31.5c-8.5%2C0-15.5-7-15.5-15.5S7.5%2C0.5%2C16%2C0.5s15.5%2C7%2C15.5%2C15.5S24.5%2C31.5%2C16%2C31.5z%22/%3E%0D%0A%09%09%3Cpath%20fill%3D%22%2378BE20%22%20d%3D%22M16%2C1c8.3%2C0%2C15%2C6.7%2C15%2C15c0%2C8.3-6.7%2C15-15%2C15S1%2C24.3%2C1%2C16C1%2C7.7%2C7.7%2C1%2C16%2C1%20M16%2C0C7.2%2C0%2C0%2C7.2%2C0%2C16%0D%0A%09%09%09s7.2%2C16%2C16%2C16s16-7.2%2C16-16S24.8%2C0%2C16%2C0L16%2C0z%22/%3E%0D%0A%09%3C/g%3E%0D%0A%3C/g%3E%0D%0A%3Cg%20id%3D%22Layer_2%22%3E%0D%0A%3C/g%3E%0D%0A%3C/svg%3E%0D%0A');
+}
+
+.stg .radio input[type="radio"]:checked + label {
+	background-image: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0D%0A%3C%21--%20Generator%3A%20Adobe%20Illustrator%2016.2.1%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200%29%20%20--%3E%0D%0A%3C%21DOCTYPE%20svg%20PUBLIC%20%22-//W3C//DTD%20SVG%201.1//EN%22%20%22http%3A//www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd%22%3E%0D%0A%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2232px%22%0D%0A%09%20height%3D%2232px%22%20viewBox%3D%220%200%2032%2032%22%20enable-background%3D%22new%200%200%2032%2032%22%20xml%3Aspace%3D%22preserve%22%3E%0D%0A%3Cg%20id%3D%22Layer_1%22%3E%0D%0A%09%3Cg%3E%0D%0A%09%09%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M16%2C31.5c-8.5%2C0-15.5-7-15.5-15.5S7.5%2C0.5%2C16%2C0.5s15.5%2C7%2C15.5%2C15.5S24.5%2C31.5%2C16%2C31.5z%22/%3E%0D%0A%09%09%3Cpath%20fill%3D%22%2378BE20%22%20d%3D%22M16%2C1c8.3%2C0%2C15%2C6.7%2C15%2C15c0%2C8.3-6.7%2C15-15%2C15S1%2C24.3%2C1%2C16C1%2C7.7%2C7.7%2C1%2C16%2C1%20M16%2C0C7.2%2C0%2C0%2C7.2%2C0%2C16%0D%0A%09%09%09s7.2%2C16%2C16%2C16s16-7.2%2C16-16S24.8%2C0%2C16%2C0L16%2C0z%22/%3E%0D%0A%09%3C/g%3E%0D%0A%09%3Ccircle%20fill%3D%22%2378BE20%22%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%228%22/%3E%0D%0A%3C/g%3E%0D%0A%3Cg%20id%3D%22Layer_2%22%3E%0D%0A%3C/g%3E%0D%0A%3C/svg%3E%0D%0A');
+}
+
+.stg .pagination > li > a, .stg .pagination > li > span {
+	color:#004833;
+	border-color: #999;
+}
+
+.stg .pagination > li > a:hover {
+	color:#004833;
+	background-color: rgba(120,190,32, 0.3);
+	text-decoration: none;
+	border-color: #999;
+}
+
+.stg .pagination > li > a:focus, .stg .pagination > li > a:active {
+	color:#fff;
+	background-color: rgba(120,190,32, 0.8);
+	text-decoration: none;
+}
+
+.stg .pagination > .active > a, .stg .pagination > .active > span, .stg .pagination > .active > a:hover, .stg .pagination > .active > span:hover, .stg .pagination > .active > a:focus, .stg .pagination > .active > span:focus {
+	background-color: rgba(0,72,51, 0.8);
+	border-color: rgba(0,72,51, 1);
+	color:#fff;
+}
+
+.stg .headIcon {
+	color:#004833;
+}
+
+/* --- BANK OF MELBOURNE STYLES --- */
+
+@font-face {
+  font-family: 'Stag-l';
+  font-style: normal;
+  font-weight: 400;
+  src:url(../fonts/Stag-Light.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Stag-m';
+  font-style: normal;
+  font-weight: 400;
+  src:url(../fonts/Stag-Medium.woff) format('woff');
+}
+
+.bom .panelInner {
+	margin-top:0;
+}
+
+.bom h1, .bom h2, .bom h3, .bom h4,  .bom h5, .bom h6 {
+	font-family:"Stag-m";
+	color: #685AC0;
+}
+
+.bom .pageHeader h3 {
+	font-family: "Helvetica Neue", "Roboto", Helvetica, Arial, sans-serif;
+}
+.bom .mac_heading {
+	font-family:"Stag-l";
+	color: #403489;
+}
+
+.bom .cl .panel-heading {
+	color:#403489;
+	background-color: rgba(0,0,0,0.2);
+}
+
+.bom .panel-heading {
+	background-color: rgba(0,0,0,0.2);
+}
+
+.bom pre {
+	background-color: rgba(0,0,0,0.2);
+}
+
+.bom .panel-incomplete h1, .bom .panel-incomplete h2, .bom .panel-incomplete h3, .bom .panel-incomplete h4, .bom .panel-incomplete h5, .bom .panel-incomplete h6 {
+	font-weight: bold;
+	color:#FF6600;
+}
+
+.bom .red {
+	color:#EA2F5E;
+}
+
+.bom .navbar-inverse {
+	border-top-color:#D60C8C;
+	background-color:#fff;
+	border-bottom:1px solid #000;
+	height:5em;
+}
+
+.bom .btn-link.active {
+	background-color: #D60C8C;
+}
+
+.bom a.btn.btn-link:active {
+	background-color: #D60C8C;
+	border-radius: 20px;
+	color:#fff;
+}
+
+.bom .btn-mac {
+	border-color: #D60C8C;
+	background-color: rgba(214,12,140,1.0)
+}
+
+.bom .btn-mac:hover {
+	background-color: rgba(214,12,140,0.7);
+}
+
+.bom div:not(.has-error) .form-control:focus {
+	border-color: rgba(104,90,192, 1);
+	box-shadow: 0 0 8px rgba(104,90,192, 0.8);
+}
+
+.bom .panel-heading {
+	background-color:#000;
+	color:#fff;
+}
+
+.bom .panel-light>.panel-heading {
+	background-color: rgba(104,90,192,0.3);
+	color:#000;
+}
+
+.bom .container .row-fluid {
+	margin-top:0;
+}
+
+.bom .navbar-inner .col-sm-2 {
+	margin-top:1.4em;
+}
+
+.bom .logo {
+	color:#403489;
+	background: url('../img/Bank-Melbourne_50x41.png');
+	height:40px;
+	padding-left:2em;
+	padding-top:0.5em;
+	background-repeat: no-repeat;
+	background-position: -0.5em -0.25em;
+} 
+
+.bom .limits {
+	background-color: rgba(120,190,32,0.2);
+}
+
+.bom .limits h4, .bom .limits p {
+	color: #685AC0;
+}
+
+.bom .limits-body h4 {
+	color: #685AC0;
+}
+
+.bom .list-group .glyphicon {
+	color: #685AC0;
+}
+
+.bom ul a {
+	color: #685AC0;
+}
+
+.bom ul a:hover {
+	color: #685AC0;
+}
+
+.bom ul li:hover {
+	background-color: rgba(64, 52, 137,0.2);
+}
+
+.bom .table > thead > tr > th {
+	border-bottom:1px solid rgba(104,90,192,0.6);
+}
+
+.bom .navbar-inner i {
+	color:#000;
+}
+
+.bom .pageHeader {
+	margin-top:0;
+	height:4em;
+	margin-bottom:1em;
+}
+.bom button.navbar {
+	color:#000;
+}
+
+.bom .open>.dropdown-toggle.btn-default.navbar {
+	color:#000;
+}
+
+.bom .btn-group .btn:hover {
+	background-color: rgba(0,72,51,0.2);
+}
+
+.bom .btn-group .btn:active {
+	background-color: rgba(0,72,51,1);
+	color:#fff;
+}
+
+.bom .panel-approved h1, .bom .panel-approved h2, .bom .panel-approved h3, .bom .panel-approved h4, .bom .panel-approved h5, .bom .panel-approved h6 {
+	font-weight: bold;
+	color:#3c673d;
+}
+
+.bom .limitsTable p {
+	color: #685AC0;
+	text-align: center;
+}
+
+.bom .limitsTable h4 {
+	font-family: "Helvetica Neue", "Roboto", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+}
+
+.bom .limitsTable>tbody>tr>td {
+	background-color: rgba(64, 52, 137,0.15);
+}
+
+.bom .limit-chart h5 {
+	font-family: "Helvetica Neue", "Roboto", Helvetica, Arial, sans-serif;
+}
+
+.bom .btn-group .btn {
+	background-color: rgba(104,90,192,0.2);
+	color:#000;
+	border-color: rgb(64,52,137);
+}
+
+.bom .btn-group .btn:hover {
+	background-color: rgba(104,90,192,0.7);
+	color:#fff;
+}
+
+.bom .btn-group .btn:active {
+	background-color: rgba(104,90,192,0.5);
+	color:#000;
+}
+
+.bom .btn-group .btn.disabled {
+	background-color: rgba(104,90,192,0.2);
+	color:#fff;	
+}
+
+.bom h4.logo {
+	font-size:1.45em;
+	padding-top:0.3em;
+}
+
+.bom .navbar-inner .col-sm-3 {
+	margin-top:1.3em;
+}
+
+.bom .modal-body .radio label {
+	background-image: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0D%0A%3C%21--%20Generator%3A%20Adobe%20Illustrator%2017.1.0%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200%29%20%20--%3E%0D%0A%3C%21DOCTYPE%20svg%20PUBLIC%20%22-//W3C//DTD%20SVG%201.0//EN%22%20%22http%3A//www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd%22%3E%0D%0A%3Csvg%20version%3D%221.0%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2232px%22%0D%0A%09%20height%3D%2232px%22%20viewBox%3D%220%200%2032%2032%22%20enable-background%3D%22new%200%200%2032%2032%22%20xml%3Aspace%3D%22preserve%22%3E%0D%0A%3Cg%20id%3D%22Layer_1%22%3E%0D%0A%09%3Cg%3E%0D%0A%09%09%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M16%2C31.5c-8.5%2C0-15.5-7-15.5-15.5S7.5%2C0.5%2C16%2C0.5s15.5%2C7%2C15.5%2C15.5S24.5%2C31.5%2C16%2C31.5z%22/%3E%0D%0A%09%09%3Cpath%20fill%3D%22%23685AC0%22%20d%3D%22M16%2C1c8.3%2C0%2C15%2C6.7%2C15%2C15s-6.7%2C15-15%2C15S1%2C24.3%2C1%2C16S7.7%2C1%2C16%2C1%20M16%2C0C7.2%2C0%2C0%2C7.2%2C0%2C16s7.2%2C16%2C16%2C16%0D%0A%09%09%09c8.8%2C0%2C16-7.2%2C16-16S24.8%2C0%2C16%2C0L16%2C0z%22/%3E%0D%0A%09%3C/g%3E%0D%0A%3C/g%3E%0D%0A%3Cg%20id%3D%22Layer_2%22%3E%0D%0A%3C/g%3E%0D%0A%3C/svg%3E%0D%0A');
+}
+
+.bom .radio input[type="radio"]:checked + label {
+	background-image: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0D%0A%3C%21--%20Generator%3A%20Adobe%20Illustrator%2017.1.0%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200%29%20%20--%3E%0D%0A%3C%21DOCTYPE%20svg%20PUBLIC%20%22-//W3C//DTD%20SVG%201.0//EN%22%20%22http%3A//www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd%22%3E%0D%0A%3Csvg%20version%3D%221.0%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2232px%22%0D%0A%09%20height%3D%2232px%22%20viewBox%3D%220%200%2032%2032%22%20enable-background%3D%22new%200%200%2032%2032%22%20xml%3Aspace%3D%22preserve%22%3E%0D%0A%3Cg%20id%3D%22Layer_1%22%3E%0D%0A%09%3Cg%3E%0D%0A%09%09%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M16%2C31.5c-8.5%2C0-15.5-7-15.5-15.5S7.5%2C0.5%2C16%2C0.5s15.5%2C7%2C15.5%2C15.5S24.5%2C31.5%2C16%2C31.5z%22/%3E%0D%0A%09%09%3Cpath%20fill%3D%22%23685AC0%22%20d%3D%22M16%2C1c8.3%2C0%2C15%2C6.7%2C15%2C15s-6.7%2C15-15%2C15S1%2C24.3%2C1%2C16S7.7%2C1%2C16%2C1%20M16%2C0C7.2%2C0%2C0%2C7.2%2C0%2C16s7.2%2C16%2C16%2C16%0D%0A%09%09%09c8.8%2C0%2C16-7.2%2C16-16S24.8%2C0%2C16%2C0L16%2C0z%22/%3E%0D%0A%09%3C/g%3E%0D%0A%09%3Ccircle%20fill%3D%22%23685AC0%22%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%228%22/%3E%0D%0A%3C/g%3E%0D%0A%3Cg%20id%3D%22Layer_2%22%3E%0D%0A%3C/g%3E%0D%0A%3C/svg%3E%0D%0A');
+}
+
+.bom .pagination > li > a, .bom .pagination > li > span {
+	color:#685AC0;
+	border-color: #999;
+}
+
+.bom .pagination > li > a:hover {
+	color:#685AC0;
+	background-color: rgba(104,90,192, 0.3);
+	text-decoration: none;
+	border-color: #999;
+}
+
+.bom .pagination > li > a:focus, .bom .pagination > li > a:active {
+	color:#fff;
+	background-color: rgba(104,90,192, 0.8);
+	text-decoration: none;
+}
+
+.bom .pagination > .active > a, .bom .pagination > .active > span, .bom .pagination > .active > a:hover, .bom .pagination > .active > span:hover, .bom .pagination > .active > a:focus, .bom .pagination > .active > span:focus {
+	background-color: rgba(104,90,192, 0.8);
+	border-color: rgba(104,90,192, 1);
+	color:#fff;
+}
+
+.bom .headIcon {
+	color:#685AC0;
+}
+
+/*-- FIN -- */
